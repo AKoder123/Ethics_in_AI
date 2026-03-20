@@ -1,199 +1,232 @@
 /* ═══════════════════════════════════════════════════════
-   AI Strategy & Ethics — Presentation Engine v2
-   Light editorial theme | Stephen Rando PhD
+   AI Strategy & Ethics — Presentation Engine v3
+   Forest Executive palette | Stephen Rando PhD
+   Forest #1F3B2F  Navy #1D3557  Sand #EFE8DC
+   Taupe #7A746B   Brass #9C8B6E  Ivory #FAF8F3
    ═══════════════════════════════════════════════════════ */
 'use strict';
 
-// ─── SVG Illustrations ─────────────────────────────────
+/* ── Palette tokens (mirrors CSS vars for use in SVG) ── */
+const C = {
+  forest:  '#1F3B2F',
+  navy:    '#1D3557',
+  sand:    '#EFE8DC',
+  sandMid: '#E4DAC8',
+  taupe:   '#7A746B',
+  brass:   '#9C8B6E',
+  ivory:   '#FAF8F3',
+  divider: '#DDD8CF',
+  ink:     '#1A1A18',
+  surface: '#FFFFFF',
+};
 
+/* ── Inline SVG illustrations ─────────────────────────── */
 const ILLUS = {
 
-  /* Inputs ↔ Outputs abstraction diagram */
+  /* Inputs ↔ Outputs: abstraction / computation */
   'inputs-outputs': `
-<svg class="slide-illustration" viewBox="0 0 520 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Left: human side -->
-  <rect x="10" y="80" width="130" height="120" rx="5" fill="#FFFFFF" stroke="#D6D3D1"/>
-  <text x="75" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#1E3A5F">INPUTS</text>
-  <text x="75" y="122" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#6B7280">Simplifying interface</text>
-  <text x="75" y="134" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#7C8F7A" font-style="italic">abstraction</text>
-  <!-- People icons -->
-  <circle cx="45" cy="165" r="9" fill="#1E3A5F" opacity="0.7"/>
-  <rect x="38" y="176" width="14" height="14" rx="3" fill="#1E3A5F" opacity="0.7"/>
-  <circle cx="75" cy="165" r="9" fill="#1E3A5F" opacity="0.5"/>
-  <rect x="68" y="176" width="14" height="14" rx="3" fill="#1E3A5F" opacity="0.5"/>
-  <circle cx="105" cy="165" r="9" fill="#1E3A5F" opacity="0.3"/>
-  <rect x="98" y="176" width="14" height="14" rx="3" fill="#1E3A5F" opacity="0.3"/>
+<svg class="slide-illustration" viewBox="0 0 540 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left panel: Inputs -->
+  <rect x="8" y="70" width="150" height="148" rx="4" fill="${C.surface}" stroke="${C.divider}"/>
+  <rect x="8" y="70" width="150" height="4" rx="2" fill="${C.forest}"/>
+  <text x="83" y="96" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="${C.forest}">INPUTS</text>
+  <text x="83" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.taupe}">Simplifying interface</text>
+  <text x="83" y="122" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.brass}" font-style="italic">abstraction</text>
+  <!-- Person icons -->
+  <circle cx="42"  cy="160" r="10" fill="${C.forest}" opacity="0.75"/>
+  <rect   x="34"   y="173" width="16" height="18" rx="3" fill="${C.forest}" opacity="0.75"/>
+  <circle cx="83"  cy="160" r="10" fill="${C.forest}" opacity="0.45"/>
+  <rect   x="75"   y="173" width="16" height="18" rx="3" fill="${C.forest}" opacity="0.45"/>
+  <circle cx="124" cy="160" r="10" fill="${C.forest}" opacity="0.22"/>
+  <rect   x="116"  y="173" width="16" height="18" rx="3" fill="${C.forest}" opacity="0.22"/>
+  <text x="83" y="206" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="${C.taupe}">Anyone can access</text>
 
-  <!-- Centre: computer box -->
-  <rect x="195" y="60" width="130" height="160" rx="5" fill="#F2EFE9" stroke="#D6D3D1" stroke-width="1.5"/>
-  <rect x="215" y="80" width="90" height="55" rx="3" fill="#FFFFFF" stroke="#D6D3D1"/>
-  <text x="260" y="102" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">Natural Language</text>
-  <text x="260" y="115" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">→ Software</text>
-  <rect x="215" y="148" width="90" height="8" rx="2" fill="#1E3A5F" opacity="0.12"/>
-  <rect x="215" y="160" width="70" height="8" rx="2" fill="#7C8F7A" opacity="0.2"/>
-  <rect x="215" y="172" width="80" height="8" rx="2" fill="#1E3A5F" opacity="0.08"/>
-  <text x="260" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#1F2937">Generative AI</text>
+  <!-- Arrow left to centre -->
+  <line x1="162" y1="145" x2="196" y2="145" stroke="${C.forest}" stroke-width="1.5" marker-end="url(#af)"/>
+  <text x="179" y="160" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="${C.forest}" opacity="0.65">natural language</text>
 
-  <!-- Right: outputs -->
-  <rect x="380" y="80" width="130" height="120" rx="5" fill="#FFFFFF" stroke="#D6D3D1"/>
-  <text x="445" y="108" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#7C8F7A">OUTPUTS</text>
-  <text x="445" y="122" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#6B7280">Expanding capabilities</text>
-  <text x="445" y="134" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="#7C8F7A" font-style="italic">computation</text>
+  <!-- Centre: AI box -->
+  <rect x="200" y="50" width="140" height="190" rx="4" fill="${C.sand}" stroke="${C.divider}" stroke-width="1.5"/>
+  <text x="270" y="82" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="${C.ink}">Generative AI</text>
+  <rect x="220" y="92"  width="100" height="10" rx="2" fill="${C.forest}" opacity="0.14"/>
+  <rect x="220" y="108" width="80"  height="10" rx="2" fill="${C.brass}"  opacity="0.22"/>
+  <rect x="220" y="124" width="90"  height="10" rx="2" fill="${C.forest}" opacity="0.09"/>
+  <rect x="220" y="140" width="72"  height="10" rx="2" fill="${C.brass}"  opacity="0.15"/>
+  <rect x="220" y="156" width="84"  height="10" rx="2" fill="${C.forest}" opacity="0.11"/>
+  <text x="270" y="195" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Transformer model</text>
+  <text x="270" y="208" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">processing prompts</text>
+  <text x="270" y="228" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="${C.brass}" opacity="0.7">Deep Learning → LLM</text>
+
+  <!-- Arrow centre to right -->
+  <line x1="344" y1="145" x2="376" y2="145" stroke="${C.brass}" stroke-width="1.5" marker-end="url(#af2)"/>
+  <text x="360" y="160" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="${C.brass}" opacity="0.8">computation</text>
+
+  <!-- Right panel: Outputs -->
+  <rect x="380" y="70" width="150" height="148" rx="4" fill="${C.surface}" stroke="${C.divider}"/>
+  <rect x="380" y="70" width="150" height="4" rx="2" fill="${C.brass}"/>
+  <text x="455" y="96" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="${C.brass}">OUTPUTS</text>
+  <text x="455" y="110" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.taupe}">Expanding capabilities</text>
   <!-- Output chips -->
-  <rect x="395" y="148" width="45" height="16" rx="3" fill="#7C8F7A" opacity="0.18"/>
-  <text x="417" y="160" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#7C8F7A">Text</text>
-  <rect x="448" y="148" width="48" height="16" rx="3" fill="#1E3A5F" opacity="0.1"/>
-  <text x="472" y="160" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#1E3A5F">Code</text>
-  <rect x="395" y="170" width="45" height="16" rx="3" fill="#7C8F7A" opacity="0.12"/>
-  <text x="417" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#7C8F7A">Images</text>
-  <rect x="448" y="170" width="48" height="16" rx="3" fill="#1E3A5F" opacity="0.08"/>
-  <text x="472" y="182" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#1E3A5F">Decisions</text>
+  <rect x="395" y="126" width="52" height="18" rx="3" fill="${C.forest}" opacity="0.1"/>
+  <text x="421" y="139" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.forest}">Text</text>
+  <rect x="455" y="126" width="52" height="18" rx="3" fill="${C.brass}"  opacity="0.15"/>
+  <text x="481" y="139" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.brass}">Code</text>
+  <rect x="395" y="152" width="52" height="18" rx="3" fill="${C.forest}" opacity="0.08"/>
+  <text x="421" y="165" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.forest}">Images</text>
+  <rect x="455" y="152" width="52" height="18" rx="3" fill="${C.brass}"  opacity="0.1"/>
+  <text x="481" y="165" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.brass}">Decisions</text>
+  <text x="455" y="203" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="${C.taupe}">Specialised at scale</text>
 
-  <!-- Arrows -->
-  <line x1="143" y1="140" x2="192" y2="140" stroke="#1E3A5F" stroke-width="1.5" marker-end="url(#arr)"/>
-  <line x1="328" y1="140" x2="377" y2="140" stroke="#7C8F7A" stroke-width="1.5" marker-end="url(#arr2)"/>
   <defs>
-    <marker id="arr"  markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 Z" fill="#1E3A5F"/></marker>
-    <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 Z" fill="#7C8F7A"/></marker>
+    <marker id="af"  markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 Z" fill="${C.forest}"/></marker>
+    <marker id="af2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 Z" fill="${C.brass}"/></marker>
   </defs>
-  <!-- Labels below arrows -->
-  <text x="167" y="158" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#1E3A5F" opacity="0.7">abstraction</text>
-  <text x="352" y="158" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#7C8F7A">computation</text>
 </svg>`,
 
-  /* Value stick: Worth to Customer / Price / Cost */
+  /* Value stick */
   'value-stick': `
-<svg class="slide-illustration" viewBox="0 0 480 280" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- BA column -->
-  <text x="130" y="22" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#6B7280">Status Quo</text>
-  <line x1="130" y1="32" x2="130" y2="250" stroke="#D6D3D1" stroke-width="1.5"/>
-  <line x1="90" y1="55"  x2="170" y2="55"  stroke="#D6D3D1" stroke-width="1.5"/>
-  <text x="180" y="60" font-family="Inter,sans-serif" font-size="8.5" fill="#6B7280">Worth to Customer</text>
-  <line x1="90" y1="120" x2="170" y2="120" stroke="#D6D3D1" stroke-width="1.5"/>
-  <text x="180" y="125" font-family="Inter,sans-serif" font-size="8.5" fill="#6B7280">Price</text>
-  <line x1="90" y1="185" x2="170" y2="185" stroke="#D6D3D1" stroke-width="1.5"/>
-  <text x="180" y="190" font-family="Inter,sans-serif" font-size="8.5" fill="#6B7280">Cost to Supplier</text>
-  <!-- Brace labels -->
-  <text x="60"  y="92"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#1E3A5F" opacity="0.5">Margin</text>
-  <text x="60"  y="158" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280" opacity="0.5">Profit</text>
+<svg class="slide-illustration" viewBox="0 0 500 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Status quo column -->
+  <text x="120" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" fill="${C.taupe}">Status Quo</text>
+  <line x1="120" y1="28" x2="120" y2="252" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="76"  y1="54"  x2="164" y2="54"  stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="76"  y1="122" x2="164" y2="122" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="76"  y1="192" x2="164" y2="192" stroke="${C.divider}" stroke-width="1.5"/>
+  <text x="174" y="59"  font-family="Inter,sans-serif" font-size="8.5" fill="${C.taupe}">Worth to Customer</text>
+  <text x="174" y="127" font-family="Inter,sans-serif" font-size="8.5" fill="${C.taupe}">Price</text>
+  <text x="174" y="197" font-family="Inter,sans-serif" font-size="8.5" fill="${C.taupe}">Cost to Supplier</text>
+  <!-- margin brace area labels -->
+  <text x="54" y="92"  text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.forest}" opacity="0.5">Margin</text>
+  <text x="54" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}"  opacity="0.5">Profit</text>
 
   <!-- AI-enabled column -->
-  <text x="360" y="22" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#1E3A5F">With AI</text>
-  <line x1="360" y1="32" x2="360" y2="250" stroke="#D6D3D1" stroke-width="1.5"/>
-  <!-- Worth UP -->
-  <line x1="320" y1="42" x2="400" y2="42" stroke="#1E3A5F" stroke-width="1.5"/>
-  <line x1="360" y1="55" x2="360" y2="43" stroke="#1E3A5F" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#upArr)"/>
-  <!-- Cost DOWN -->
-  <line x1="320" y1="210" x2="400" y2="210" stroke="#7C8F7A" stroke-width="1.5"/>
-  <line x1="360" y1="185" x2="360" y2="208" stroke="#7C8F7A" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#downArr)"/>
-  <!-- Labels -->
-  <rect x="310" y="34" width="100" height="14" rx="2" fill="rgba(30,58,95,0.08)"/>
-  <text x="360" y="45" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="#1E3A5F">AI improves quality ↑</text>
-  <rect x="310" y="202" width="100" height="14" rx="2" fill="rgba(124,143,122,0.12)"/>
-  <text x="360" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="#7C8F7A">AI cuts cost ↓</text>
-  <!-- Bigger profit bracket -->
-  <text x="420" y="130" text-anchor="start" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#1E3A5F">More value</text>
-  <text x="420" y="142" text-anchor="start" font-family="Inter,sans-serif" font-size="8" fill="#6B7280">created</text>
+  <text x="370" y="20" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" fill="${C.forest}">With AI</text>
+  <line x1="370" y1="28" x2="370" y2="252" stroke="${C.divider}" stroke-width="1.5"/>
+
+  <!-- Worth UP (forest) -->
+  <line x1="326" y1="40"  x2="414" y2="40"  stroke="${C.forest}" stroke-width="1.5"/>
+  <line x1="370" y1="54"  x2="370" y2="41"  stroke="${C.forest}" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#upF)"/>
+  <rect x="316" y="32" width="108" height="14" rx="2" fill="${C.forest}" opacity="0.08"/>
+  <text x="370" y="43" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="${C.forest}">Better quality ↑</text>
+
+  <!-- Cost DOWN (brass) -->
+  <line x1="326" y1="214" x2="414" y2="214" stroke="${C.brass}" stroke-width="1.5"/>
+  <line x1="370" y1="192" x2="370" y2="212" stroke="${C.brass}" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#downB)"/>
+  <rect x="316" y="205" width="108" height="14" rx="2" fill="${C.brass}" opacity="0.1"/>
+  <text x="370" y="216" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="600" fill="${C.brass}">Lower cost ↓</text>
+
+  <!-- Expanded value callout -->
+  <text x="436" y="128" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="${C.forest}">More value</text>
+  <text x="436" y="140" font-family="Inter,sans-serif" font-size="8" fill="${C.taupe}">created</text>
+
   <defs>
-    <marker id="upArr"   markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,5 L2.5,0 L5,5 Z" fill="#1E3A5F"/></marker>
-    <marker id="downArr" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L2.5,5 L5,0 Z" fill="#7C8F7A"/></marker>
+    <marker id="upF"   markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,5 L2.5,0 L5,5 Z" fill="${C.forest}"/></marker>
+    <marker id="downB" markerWidth="5" markerHeight="5" refX="2.5" refY="2.5" orient="auto"><path d="M0,0 L2.5,5 L5,0 Z" fill="${C.brass}"/></marker>
   </defs>
 </svg>`,
 
-  /* Disruption / S-curve illustration */
+  /* Disruption S-curve */
   'disruption': `
 <svg class="slide-illustration" viewBox="0 0 500 260" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Axes -->
-  <line x1="50" y1="220" x2="460" y2="220" stroke="#D6D3D1" stroke-width="1.5"/>
-  <line x1="50" y1="20"  x2="50"  y2="220" stroke="#D6D3D1" stroke-width="1.5"/>
-  <text x="255" y="240" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#6B7280">Time</text>
-  <text x="25"  y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#6B7280" transform="rotate(-90,25,125)">Market Share</text>
+  <line x1="48" y1="220" x2="462" y2="220" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="48" y1="18"  x2="48"  y2="220" stroke="${C.divider}" stroke-width="1.5"/>
+  <text x="255" y="240" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="${C.taupe}">Time</text>
+  <text x="22"  y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" fill="${C.taupe}" transform="rotate(-90,22,125)">Market Share</text>
+  <!-- Y tick labels -->
+  <text x="40" y="222" text-anchor="end" font-family="Inter,sans-serif" font-size="7" fill="${C.taupe}">0</text>
+  <text x="40" y="170" text-anchor="end" font-family="Inter,sans-serif" font-size="7" fill="${C.taupe}">25%</text>
+  <text x="40" y="118" text-anchor="end" font-family="Inter,sans-serif" font-size="7" fill="${C.taupe}">50%</text>
+  <line x1="48" y1="170" x2="54" y2="170" stroke="${C.divider}"/>
+  <line x1="48" y1="118" x2="54" y2="118" stroke="${C.divider}"/>
 
-  <!-- Incumbent S-curve (grey, stalls) -->
-  <path d="M55,210 C80,205 120,190 160,150 C200,110 220,90 240,82 C260,74 280,74 400,74"
-        stroke="#D6D3D1" stroke-width="2" fill="none"/>
-  <text x="405" y="78" font-family="Inter,sans-serif" font-size="8.5" fill="#9CA3AF">Incumbent</text>
+  <!-- Incumbent curve – stalls at mid (taupe/sand) -->
+  <path d="M52,214 C76,210 116,196 158,156 C200,116 224,94 248,86 C272,78 294,76 412,76"
+        stroke="${C.divider}" stroke-width="2" fill="none"/>
+  <text x="416" y="80" font-family="Inter,sans-serif" font-size="8" fill="${C.taupe}">Incumbent</text>
+  <text x="390" y="96" font-family="Inter,sans-serif" font-size="7" fill="${C.taupe}" opacity="0.7">stalls</text>
 
-  <!-- Disruptor S-curve (navy) — starts low, overtakes -->
-  <path d="M55,218 C70,217 100,215 140,210 C190,203 230,185 280,145 C330,105 370,72 430,45"
-        stroke="#1E3A5F" stroke-width="2" fill="none"/>
-  <text x="432" y="50" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="#1E3A5F">Disruptor</text>
+  <!-- Disruptor curve – overtakes (forest) -->
+  <path d="M52,218 C70,217 102,215 144,210 C196,204 240,188 290,150 C340,110 382,72 440,42"
+        stroke="${C.forest}" stroke-width="2.5" fill="none"/>
+  <text x="444" y="46" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="${C.forest}">Disruptor</text>
 
-  <!-- Crossover marker -->
-  <circle cx="295" cy="143" r="5" fill="none" stroke="#7C8F7A" stroke-width="1.5"/>
-  <line x1="295" y1="143" x2="295" y2="220" stroke="#7C8F7A" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="295" y="232" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#7C8F7A">Crossover</text>
+  <!-- Crossover point -->
+  <circle cx="300" cy="146" r="5" fill="none" stroke="${C.brass}" stroke-width="1.5"/>
+  <line x1="300" y1="146" x2="300" y2="220" stroke="${C.brass}" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="300" y="232" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.brass}">Crossover</text>
 
-  <!-- Blockbuster label with X -->
-  <text x="88" y="198" font-family="Inter,sans-serif" font-size="7.5" fill="#9CA3AF">Blockbuster</text>
-  <text x="360" y="98" font-family="Inter,sans-serif" font-size="7.5" fill="#9CA3AF">Stalls</text>
+  <!-- Blockbuster bankruptcy tag -->
+  <rect x="316" y="60" width="88" height="20" rx="3" fill="${C.sand}"/>
+  <text x="360" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Bankruptcy 2010</text>
+  <line x1="360" y1="80" x2="360" y2="93" stroke="${C.divider}" stroke-width="1"/>
 
-  <!-- Bankruptcy annotation -->
-  <rect x="310" y="62" width="80" height="20" rx="3" fill="rgba(214,211,209,0.5)"/>
-  <text x="350" y="76" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">Bankruptcy 2010</text>
-  <line x1="350" y1="82" x2="350" y2="97" stroke="#D6D3D1" stroke-width="1"/>
+  <!-- Netflix vs Blockbuster size note -->
+  <text x="72" y="200" font-family="Inter,sans-serif" font-size="7" fill="${C.taupe}" opacity="0.8">Blockbuster (2001)</text>
+  <text x="200" y="236" font-family="Inter,sans-serif" font-size="7" fill="${C.forest}" opacity="0.7">Netflix = 1.5% of Blockbuster's size</text>
 </svg>`,
 
-  /* Ethics cases — simple icon grid */
+  /* Ethics cases */
   'ethics-cases': `
-<svg class="slide-illustration" viewBox="0 0 500 250" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- 3 case cards -->
-  <!-- Card 1: Judge -->
-  <rect x="10" y="20" width="145" height="110" rx="5" fill="#FFFFFF" stroke="#D6D3D1"/>
-  <rect x="10" y="20" width="145" height="5" rx="3" fill="#1E3A5F"/>
-  <!-- Gavel icon -->
-  <rect x="40" y="42" width="28" height="8" rx="2" fill="#1E3A5F" opacity="0.2" transform="rotate(-35,54,46)"/>
-  <rect x="55" y="48" width="12" height="32" rx="2" fill="#1E3A5F" opacity="0.25" transform="rotate(-35,61,64)"/>
-  <text x="82" y="45" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#1F2937">Judicial AI Use</text>
-  <text x="22" y="75" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">Judge used ChatGPT to</text>
-  <text x="22" y="87" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">advise on child's medical</text>
-  <text x="22" y="99" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">rights — ruled unethical.</text>
-  <rect x="22" y="108" width="50" height="12" rx="3" fill="rgba(30,58,95,0.08)"/>
-  <text x="47" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="#1E3A5F">Accountability</text>
+<svg class="slide-illustration" viewBox="0 0 510 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Card 1: Judicial -->
+  <rect x="6"   y="12" width="154" height="108" rx="4" fill="${C.surface}" stroke="${C.divider}"/>
+  <rect x="6"   y="12" width="154" height="4"   rx="2" fill="${C.forest}"/>
+  <!-- Gavel outline -->
+  <rect x="20" y="36" width="24" height="8" rx="2" fill="${C.forest}" opacity="0.18" transform="rotate(-35,32,40)"/>
+  <rect x="32" y="44" width="10" height="28" rx="2" fill="${C.forest}" opacity="0.22" transform="rotate(-35,37,58)"/>
+  <text x="68" y="42"  font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.ink}">Judicial AI Use</text>
+  <text x="18" y="70"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Judge used ChatGPT to advise</text>
+  <text x="18" y="82"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">on child's medical rights.</text>
+  <text x="18" y="94"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Ruled unethical.</text>
+  <rect x="18" y="104" width="62" height="12" rx="3" fill="${C.forest}" opacity="0.08"/>
+  <text x="49" y="114" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="${C.forest}">Accountability</text>
 
-  <!-- Card 2: Lawyer -->
-  <rect x="178" y="20" width="145" height="110" rx="5" fill="#FFFFFF" stroke="#D6D3D1"/>
-  <rect x="178" y="20" width="145" height="5" rx="3" fill="#7C8F7A"/>
-  <!-- Document icon -->
-  <rect x="195" y="40" width="22" height="28" rx="2" fill="#7C8F7A" opacity="0.2"/>
-  <line x1="199" y1="50" x2="213" y2="50" stroke="#7C8F7A" stroke-width="1.5"/>
-  <line x1="199" y1="56" x2="211" y2="56" stroke="#7C8F7A" stroke-width="1.5"/>
-  <line x1="199" y1="62" x2="209" y2="62" stroke="#7C8F7A" stroke-width="1.5"/>
-  <text x="225" y="45" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#1F2937">AI Hallucination</text>
-  <text x="190" y="76" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">Lawyer submitted fake</text>
-  <text x="190" y="88" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">case citations generated</text>
-  <text x="190" y="100" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">by AI — court sanctions.</text>
-  <rect x="190" y="108" width="55" height="12" rx="3" fill="rgba(124,143,122,0.12)"/>
-  <text x="218" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="#7C8F7A">Transparency</text>
+  <!-- Card 2: Hallucination -->
+  <rect x="178" y="12" width="154" height="108" rx="4" fill="${C.surface}" stroke="${C.divider}"/>
+  <rect x="178" y="12" width="154" height="4"   rx="2" fill="${C.brass}"/>
+  <!-- Doc icon -->
+  <rect x="192" y="36" width="22" height="28" rx="2" fill="${C.brass}" opacity="0.18"/>
+  <line x1="196" y1="46" x2="210" y2="46" stroke="${C.brass}" stroke-width="1.5"/>
+  <line x1="196" y1="52" x2="208" y2="52" stroke="${C.brass}" stroke-width="1.5"/>
+  <line x1="196" y1="58" x2="206" y2="58" stroke="${C.brass}" stroke-width="1.5"/>
+  <text x="222" y="42"  font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.ink}">AI Hallucination</text>
+  <text x="190" y="70"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Lawyer submitted AI-generated</text>
+  <text x="190" y="82"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">fake case citations to court.</text>
+  <text x="190" y="94"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Faced court sanctions.</text>
+  <rect x="190" y="104" width="58" height="12" rx="3" fill="${C.brass}" opacity="0.12"/>
+  <text x="219" y="114" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="${C.brass}">Transparency</text>
 
   <!-- Card 3: Environment -->
-  <rect x="346" y="20" width="145" height="110" rx="5" fill="#FFFFFF" stroke="#D6D3D1"/>
-  <rect x="346" y="20" width="145" height="5" rx="3" fill="#1E3A5F"/>
-  <!-- Server stack icon -->
-  <rect x="360" y="40" width="26" height="7" rx="2" fill="#1E3A5F" opacity="0.2"/>
-  <rect x="360" y="50" width="26" height="7" rx="2" fill="#1E3A5F" opacity="0.15"/>
-  <rect x="360" y="60" width="26" height="7" rx="2" fill="#1E3A5F" opacity="0.1"/>
-  <text x="394" y="49" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#1F2937">Environmental Cost</text>
-  <text x="358" y="76" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">Data centres = 22% of</text>
-  <text x="358" y="88" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">Ireland's energy (2024).</text>
-  <text x="358" y="100" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">0.5L water per 50 prompts.</text>
-  <rect x="358" y="108" width="60" height="12" rx="3" fill="rgba(30,58,95,0.08)"/>
-  <text x="388" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="#1E3A5F">Societal Wellbeing</text>
+  <rect x="350" y="12" width="154" height="108" rx="4" fill="${C.surface}" stroke="${C.divider}"/>
+  <rect x="350" y="12" width="154" height="4"   rx="2" fill="${C.forest}"/>
+  <!-- Server stack -->
+  <rect x="364" y="36" width="26" height="7" rx="2" fill="${C.forest}" opacity="0.2"/>
+  <rect x="364" y="46" width="26" height="7" rx="2" fill="${C.forest}" opacity="0.14"/>
+  <rect x="364" y="56" width="26" height="7" rx="2" fill="${C.forest}" opacity="0.09"/>
+  <text x="398" y="44"  font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.ink}">Energy &amp; Water</text>
+  <text x="362" y="72"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Data centres = 22% of</text>
+  <text x="362" y="84"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">Ireland's energy (2024).</text>
+  <text x="362" y="96"  font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">0.5L water / 50 prompts.</text>
+  <rect x="362" y="104" width="65" height="12" rx="3" fill="${C.forest}" opacity="0.08"/>
+  <text x="395" y="114" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="${C.forest}">Societal Wellbeing</text>
 
-  <!-- Social Credit card, bottom -->
-  <rect x="100" y="148" width="300" height="80" rx="5" fill="#FFFFFF" stroke="#D6D3D1"/>
-  <rect x="100" y="148" width="300" height="4" rx="2" fill="#D6D3D1"/>
-  <text x="130" y="172" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="#1F2937">China Social Credit System</text>
-  <text x="130" y="186" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">1,000 points per citizen — AI monitors behaviour and rates accordingly.</text>
-  <text x="130" y="198" font-family="Inter,sans-serif" font-size="7.5" fill="#6B7280">14 million opted in within months of 2014 pilot launch.</text>
-  <rect x="130" y="207" width="75" height="12" rx="3" fill="rgba(214,211,209,0.6)"/>
-  <text x="167" y="217" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="#6B7280">Human Agency</text>
-  <rect x="215" y="207" width="75" height="12" rx="3" fill="rgba(214,211,209,0.6)"/>
-  <text x="252" y="217" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="#6B7280">Privacy</text>
+  <!-- Bottom: Social Credit banner -->
+  <rect x="80" y="140" width="350" height="82" rx="4" fill="${C.sand}" stroke="${C.divider}"/>
+  <rect x="80" y="140" width="350" height="4"  rx="2" fill="${C.taupe}" opacity="0.5"/>
+  <text x="255" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.ink}">China's Social Credit System</text>
+  <text x="255" y="178" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">1,000 points per citizen — AI monitors behaviour and rates accordingly.</text>
+  <text x="255" y="192" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.taupe}">14 million opted in within months of the 2014 pilot launch.</text>
+  <rect x="100" y="200" width="72" height="13" rx="3" fill="${C.taupe}" opacity="0.14"/>
+  <text x="136" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="${C.taupe}">Human Agency</text>
+  <rect x="184" y="200" width="55" height="13" rx="3" fill="${C.taupe}" opacity="0.14"/>
+  <text x="211" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="${C.taupe}">Privacy</text>
+  <rect x="252" y="200" width="72" height="13" rx="3" fill="${C.taupe}" opacity="0.14"/>
+  <text x="288" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" font-weight="600" fill="${C.taupe}">Fairness</text>
 </svg>`
 };
 
-// ─── Renderers ─────────────────────────────────────────
+/* ── Slide renderers ──────────────────────────────────── */
 
 function renderTitle(slide, idx, total) {
   return `
@@ -206,7 +239,8 @@ function renderTitle(slide, idx, total) {
       <div class="title-rule" data-animate="scale" data-delay="4"></div>
       <div data-animate data-delay="5"><div class="presenter-badge">${slide.presenter}</div></div>
       <div class="nav-hint" data-animate data-delay="6">
-        Press <span class="key-badge">Space</span> or <span class="key-badge">→</span> to advance &nbsp;·&nbsp; <span class="key-badge">←</span> to go back
+        Press <span class="key-badge">Space</span> or <span class="key-badge">→</span> to advance
+        &nbsp;·&nbsp; <span class="key-badge">←</span> to go back
       </div>
     </div>
     <div class="slide-index-badge">${idx + 1} / ${total}</div>
@@ -217,12 +251,12 @@ function renderSection(slide, idx, total) {
   return `
   <div class="slide slide-section" data-slide="${idx}">
     <div class="slide-inner" style="max-width:700px;">
-      <div class="slide-label" data-animate data-delay="1">Section ${idx + 1}</div>
+      <div class="slide-label" data-animate data-delay="1">Section</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
       <div class="section-rule" data-animate="scale" data-delay="3"></div>
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="4">${slide.subheadline}</p>` : ''}
     </div>
-    <div class="slide-index-badge" style="color:rgba(255,255,255,0.3);">${idx + 1} / ${total}</div>
+    <div class="slide-index-badge" style="color:rgba(239,232,220,0.25);">${idx + 1} / ${total}</div>
   </div>`;
 }
 
@@ -310,7 +344,7 @@ function renderAdoptionChart(slide, idx, total) {
       <h2 data-animate data-delay="2">${slide.headline}</h2>
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="3">${slide.subheadline}</p>` : ''}
       <div data-animate="fade-up" data-delay="4">
-        ${slide.chartNote ? `<p style="font-size:0.72rem;color:var(--muted);margin-top:16px;margin-bottom:8px;font-weight:500;text-transform:uppercase;letter-spacing:0.08em;">${slide.chartNote}</p>` : ''}
+        ${slide.chartNote ? `<p style="font-size:0.69rem;color:var(--muted);margin-top:14px;margin-bottom:8px;font-weight:600;text-transform:uppercase;letter-spacing:0.09em;">${slide.chartNote}</p>` : ''}
         <div class="bar-chart">
           ${bars.map(b => `
             <div class="bar-row">
@@ -346,7 +380,7 @@ function renderStats(slide, idx, total) {
 }
 
 function renderIllustration(slide, idx, total) {
-  const illustSVG = ILLUS[slide.illus] || '';
+  const svg = ILLUS[slide.illus] || '';
   const bullets = slide.bullets || [];
   return `
   <div class="slide" data-slide="${idx}">
@@ -355,10 +389,10 @@ function renderIllustration(slide, idx, total) {
       <h2 data-animate data-delay="2">${slide.headline}</h2>
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="3" style="margin-bottom:0;">${slide.subheadline}</p>` : ''}
       <div class="img-text-row">
-        <div class="img-panel" data-animate="fade-left" data-delay="4">${illustSVG}</div>
+        <div class="img-panel" data-animate="fade-left" data-delay="4">${svg}</div>
         <div class="text-panel">
           ${bullets.map((b, i) => `
-            <div class="bullet-card" data-animate="fade-right" data-delay="${i + 4}" style="margin-bottom:7px;">
+            <div class="bullet-card" data-animate="fade-right" data-delay="${Math.min(i + 4, 8)}" style="margin-bottom:7px;">
               <span class="bullet-num">${String(i + 1).padStart(2, '0')}</span>
               <span class="bullet-text">${b}</span>
             </div>`).join('')}
@@ -401,7 +435,7 @@ function renderSlide(slide, idx, total) {
   }
 }
 
-// ─── App state ─────────────────────────────────────────
+/* ── App ──────────────────────────────────────────────── */
 let slides = [];
 let currentSlide = 0;
 
@@ -414,14 +448,11 @@ async function init() {
   try {
     const r = await fetch('./content.json');
     data = await r.json();
-  } catch(e) {
-    console.error('Failed to load content.json', e);
-    return;
-  }
+  } catch(e) { console.error('Failed to load content.json', e); return; }
 
   document.title = data.meta?.title || 'AI Presentation';
   const brand = document.querySelector('.nav-brand');
-  if (brand) brand.textContent = data.meta?.presenter || data.meta?.title || '';
+  if (brand) brand.textContent = 'AI Strategy & Ethics — Stephen Rando PhD';
 
   slides = data.slides || [];
   const deck = document.getElementById('deck');
@@ -455,10 +486,10 @@ function goToSlide(n) {
 
 function setupKeyboard() {
   document.addEventListener('keydown', e => {
-    if (e.key === ' ' || e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goToSlide(currentSlide + 1); }
-    else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); goToSlide(currentSlide - 1); }
-    else if (e.key === 'Home') { e.preventDefault(); goToSlide(0); }
-    else if (e.key === 'End') { e.preventDefault(); goToSlide(slides.length - 1); }
+    if      (e.key === ' ' || e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); goToSlide(currentSlide + 1); }
+    else if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')                    { e.preventDefault(); goToSlide(currentSlide - 1); }
+    else if (e.key === 'Home')                                                  { e.preventDefault(); goToSlide(0); }
+    else if (e.key === 'End')                                                   { e.preventDefault(); goToSlide(slides.length - 1); }
   });
 }
 
@@ -469,7 +500,7 @@ function setupScrollSync() {
     if (!ticking) {
       requestAnimationFrame(() => {
         const all = deck.querySelectorAll('.slide');
-        const dr = deck.getBoundingClientRect();
+        const dr  = deck.getBoundingClientRect();
         let closest = 0, minD = Infinity;
         all.forEach((s, i) => {
           const d = Math.abs(s.getBoundingClientRect().top - dr.top);
@@ -491,7 +522,7 @@ function setupObserver() {
   deck.querySelectorAll('.slide').forEach(s => obs.observe(s));
 }
 
-// ─── PDF Export ─────────────────────────────────────────
+/* ── PDF export ────────────────────────────────────────── */
 function setupPdfExport(data) {
   const btn = document.getElementById('exportPdfBtn');
   if (!btn) return;
@@ -514,7 +545,7 @@ async function exportPdf(data) {
     await loadScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js');
     await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
   } catch(e) {
-    alert('Could not load PDF libraries. Please allow access to cdnjs.cloudflare.com.');
+    alert('Could not load PDF libraries. Ensure cdnjs.cloudflare.com is accessible.');
     btn.disabled = false; btn.textContent = 'Export PDF'; return;
   }
 
@@ -534,8 +565,8 @@ async function exportPdf(data) {
     await new Promise(r => setTimeout(r, 130));
     try {
       const canvas = await html2canvas(stage, {
-        backgroundColor: '#F7F5F2', scale: 2, useCORS: true, allowTaint: true, logging: false,
-        width: 1920, height: 1080
+        backgroundColor: '#FAF8F3', scale: 2, useCORS: true,
+        allowTaint: true, logging: false, width: 1920, height: 1080
       });
       const img = canvas.toDataURL('image/jpeg', 0.94);
       if (i > 0) pdf.addPage([1920, 1080], 'landscape');
