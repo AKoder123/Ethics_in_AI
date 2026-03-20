@@ -400,8 +400,117 @@ body.exportingPdf .bar-fill { width: var(--bar-pct) !important; }
   padding: 90px 130px; scroll-snap-align: unset;
 }
 
-/* ─── Mobile ─── */
+/* ─── RICH INSIGHT CARDS (replaces bullet lists) ─── */
+.card-grid {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+.card-row-3 { grid-template-columns: repeat(3, 1fr); }
+.card-row-4 { grid-template-columns: repeat(2, 1fr); }
+
+/* 5 or 6 items: 3-col */
+.card-grid.card-row-3 .insight-card:nth-child(n+4) { }
+
+.insight-card {
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--r);
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.insight-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--cobalt);
+}
+.insight-card:nth-child(3n+2)::before { background: var(--coral); }
+.insight-card:nth-child(3n+3)::before { background: var(--cobalt); opacity: 0.45; }
+.insight-card:hover {
+  border-color: var(--cobalt);
+  box-shadow: 0 2px 12px rgba(59,91,219,0.08);
+}
+
+.insight-card-num {
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--cobalt);
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+}
+.insight-card:nth-child(3n+2) .insight-card-num { color: var(--coral); }
+
+.insight-card-title {
+  font-size: clamp(0.82rem, 1.3vw, 0.96rem);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+
+.insight-card-body {
+  font-size: clamp(0.76rem, 1.18vw, 0.88rem);
+  color: var(--ink2);
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* ─── ILLUSTRATION SIDE POINTS ─── */
+.illus-cards { display: flex; flex-direction: column; gap: 10px; }
+
+.illus-point {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--divider);
+  border-radius: var(--r);
+  padding: 13px 16px;
+  transition: border-color 0.14s;
+}
+.illus-point:hover { border-color: var(--cobalt); }
+
+.illus-point-accent {
+  width: 3px;
+  align-self: stretch;
+  border-radius: 2px;
+  background: var(--cobalt);
+  flex-shrink: 0;
+  min-height: 28px;
+}
+.illus-point:nth-child(even) .illus-point-accent { background: var(--coral); }
+
+.illus-point-content { flex: 1; }
+
+.illus-point-title {
+  font-size: clamp(0.78rem, 1.2vw, 0.9rem);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+
+.illus-point-body {
+  font-size: clamp(0.74rem, 1.12vw, 0.84rem);
+  color: var(--ink2);
+  line-height: 1.5;
+}
+
+/* ─── Mobile overrides ─── */
 @media (max-width: 768px) {
+  .card-row-3, .card-row-4 { grid-template-columns: 1fr; }
+}
+@media (max-height: 620px) {
+  .insight-card { padding: 12px 14px; gap: 5px; }
+  .card-grid { gap: 7px; margin-top: 12px; }
+  .illus-point { padding: 9px 12px; }
+  .illus-cards { gap: 6px; }
+}
   :root { --pad-x: 18px; --pad-y: 32px; }
   .cols-container, .img-text-row { grid-template-columns: 1fr; }
   .bullets-grid.cols-2 { grid-template-columns: 1fr; }

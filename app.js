@@ -84,36 +84,75 @@ const ILLUS = {
 </svg>`,
 
   'value-stick': `
-<svg class="slide-illustration" viewBox="0 0 540 310" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Status quo -->
-  <text x="136" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="${C.ink2}">Status Quo</text>
-  <line x1="136" y1="32" x2="136" y2="270" stroke="${C.divider}" stroke-width="1.5"/>
-  <line x1="88"  y1="60"  x2="184" y2="60"  stroke="${C.divider}" stroke-width="1.5"/>
-  <line x1="88"  y1="135" x2="184" y2="135" stroke="${C.divider}" stroke-width="1.5"/>
-  <line x1="88"  y1="210" x2="184" y2="210" stroke="${C.divider}" stroke-width="1.5"/>
-  <text x="195" y="65"  font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Worth to Customer</text>
-  <text x="195" y="140" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Price</text>
-  <text x="195" y="215" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Cost to Supplier</text>
-  <text x="60" y="102" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.cobalt}" opacity="0.5">Margin</text>
-  <text x="60" y="178" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.ink2}"  opacity="0.5">Profit</text>
+<svg class="slide-illustration" viewBox="0 0 560 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Three horizontal bands (each 80px tall):
+      Band A: Worth to Customer  y=60
+      Band B: Price              y=160
+      Band C: Cost to Supplier   y=260
 
-  <!-- AI column -->
-  <text x="400" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="${C.cobalt}">With AI</text>
-  <line x1="400" y1="32" x2="400" y2="270" stroke="${C.divider}" stroke-width="1.5"/>
-  <!-- Worth UP -->
-  <line x1="352" y1="44" x2="448" y2="44" stroke="${C.cobalt}" stroke-width="2"/>
-  <line x1="400" y1="60" x2="400" y2="45" stroke="${C.cobalt}" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#upc)"/>
-  <rect x="340" y="35" width="120" height="15" rx="3" fill="${C.cobalt}" opacity="0.09"/>
-  <text x="400" y="47" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="${C.cobalt}">Better quality ↑</text>
-  <!-- Cost DOWN -->
-  <line x1="352" y1="230" x2="448" y2="230" stroke="${C.coral}" stroke-width="2"/>
-  <line x1="400" y1="210" x2="400" y2="228" stroke="${C.coral}" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#downc)"/>
-  <rect x="340" y="220" width="120" height="15" rx="3" fill="${C.coral}" opacity="0.09"/>
-  <text x="400" y="232" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="600" fill="${C.coral}">Lower cost ↓</text>
-  <!-- more value -->
-  <text x="480" y="140" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="${C.cobalt}">More value</text>
-  <text x="480" y="154" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">created</text>
+    Status Quo axis: x=160  ticks at y=60, y=160, y=260
+    With AI  axis:  x=380  ticks shift: Worth UP → y=30, Cost DOWN → y=285
+  -->
 
+  <!-- ── Column headers ── -->
+  <text x="160" y="22" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="${C.ink2}">Status Quo</text>
+  <text x="380" y="22" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="${C.cobalt}">With AI</text>
+
+  <!-- ── Row labels (right of each axis) ── -->
+  <text x="174" y="64"  font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Worth to Customer</text>
+  <text x="174" y="164" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Price</text>
+  <text x="174" y="264" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Cost to Supplier</text>
+
+  <!-- ── Status Quo vertical axis ── -->
+  <line x1="160" y1="32" x2="160" y2="290" stroke="${C.divider}" stroke-width="1.5"/>
+  <!-- tick marks -->
+  <line x1="148" y1="60"  x2="172" y2="60"  stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="148" y1="160" x2="172" y2="160" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="148" y1="260" x2="172" y2="260" stroke="${C.divider}" stroke-width="1.5"/>
+
+  <!-- ── Brace labels left of SQ axis ── -->
+  <!-- Margin brace: between y=60 and y=160 -->
+  <line x1="100" y1="60"  x2="100" y2="160" stroke="${C.divider}" stroke-width="1"/>
+  <line x1="100" y1="60"  x2="108" y2="60"  stroke="${C.divider}" stroke-width="1"/>
+  <line x1="100" y1="160" x2="108" y2="160" stroke="${C.divider}" stroke-width="1"/>
+  <text x="92" y="114" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.cobalt}" opacity="0.55">Margin</text>
+  <!-- Profit brace: between y=160 and y=260 -->
+  <line x1="100" y1="160" x2="100" y2="260" stroke="${C.divider}" stroke-width="1"/>
+  <line x1="100" y1="260" x2="108" y2="260" stroke="${C.divider}" stroke-width="1"/>
+  <text x="92" y="214" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}" opacity="0.5">Profit</text>
+
+  <!-- ── With AI vertical axis ── -->
+  <line x1="380" y1="32" x2="380" y2="290" stroke="${C.divider}" stroke-width="1.5"/>
+
+  <!-- Worth tick (moved UP to y=30 — higher than status quo y=60) -->
+  <line x1="368" y1="30" x2="392" y2="30" stroke="${C.cobalt}" stroke-width="2"/>
+  <!-- dashed connector showing the shift from y=60 down to new y=30 -->
+  <line x1="380" y1="60" x2="380" y2="31" stroke="${C.cobalt}" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- label above the new tick -->
+  <rect x="318" y="16" width="124" height="18" rx="4" fill="${C.cobalt}" opacity="0.09"/>
+  <text x="380" y="29" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.cobalt}">↑ Better quality</text>
+
+  <!-- Price tick (same y=160 — unchanged) -->
+  <line x1="368" y1="160" x2="392" y2="160" stroke="${C.divider}" stroke-width="1.5"/>
+
+  <!-- Cost tick (moved DOWN to y=285 — lower than status quo y=260) -->
+  <line x1="368" y1="285" x2="392" y2="285" stroke="${C.coral}" stroke-width="2"/>
+  <!-- dashed connector showing the shift from y=260 down to new y=285 -->
+  <line x1="380" y1="260" x2="380" y2="284" stroke="${C.coral}" stroke-width="1" stroke-dasharray="4,3"/>
+  <!-- label below the new tick -->
+  <rect x="318" y="289" width="124" height="18" rx="4" fill="${C.coral}" opacity="0.1"/>
+  <text x="380" y="302" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.coral}">↓ Lower cost</text>
+
+  <!-- ── "More value created" callout ── -->
+  <!-- Brace on right side showing expanded gap -->
+  <line x1="460" y1="30"  x2="460" y2="285" stroke="${C.cobalt}" stroke-width="1.5" opacity="0.3"/>
+  <line x1="460" y1="30"  x2="452" y2="30"  stroke="${C.cobalt}" stroke-width="1.5" opacity="0.3"/>
+  <line x1="460" y1="285" x2="452" y2="285" stroke="${C.cobalt}" stroke-width="1.5" opacity="0.3"/>
+  <text x="470" y="150" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="${C.cobalt}">More value</text>
+  <text x="470" y="165" font-family="Inter,sans-serif" font-size="10" fill="${C.ink2}">created</text>
+
+  <!-- ── Arrow markers ── -->
   <defs>
     <marker id="upc"   markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,6 L3,0 L6,6 Z" fill="${C.cobalt}"/></marker>
     <marker id="downc" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L3,6 L6,0 Z" fill="${C.coral}"/></marker>
@@ -252,14 +291,25 @@ function renderSection(slide, idx, total) {
   </div>`;
 }
 
-function renderBullets(bullets) {
+/* Rich card grid — replaces plain bullet points */
+function renderCards(bullets) {
   if (!bullets || !bullets.length) return '';
-  const cols = bullets.length > 4 ? 'cols-2' : '';
-  return `<div class="bullets-grid ${cols}">
-    ${bullets.map((b, i) => `
-      <div class="bullet-card" data-animate="fade-up" data-delay="${Math.min(i + 3, 8)}">
-        <span class="bullet-num">${String(i + 1).padStart(2, '0')}</span>
-        <span class="bullet-text">${b}</span>
+  const count = bullets.length;
+  /* Parse optional "Title: body" format */
+  const parsed = bullets.map(b => {
+    const col = b.indexOf(':');
+    if (col > 0 && col < 40) {
+      return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
+    }
+    return { title: null, body: b };
+  });
+  const gridClass = count <= 3 ? 'card-row-3' : count === 4 ? 'card-row-4' : 'card-row-3';
+  return `<div class="card-grid ${gridClass}">
+    ${parsed.map((p, i) => `
+      <div class="insight-card" data-animate="fade-up" data-delay="${Math.min(i + 3, 8)}">
+        <div class="insight-card-num">${String(i + 1).padStart(2,'0')}</div>
+        ${p.title ? `<div class="insight-card-title">${p.title}</div>` : ''}
+        <div class="insight-card-body">${p.body}</div>
       </div>`).join('')}
   </div>`;
 }
@@ -271,7 +321,7 @@ function renderContent(slide, idx, total) {
       <div class="slide-label" data-animate data-delay="1">Insight</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="3">${slide.subheadline}</p>` : ''}
-      ${renderBullets(slide.bullets)}
+      ${renderCards(slide.bullets)}
     </div>
     <div class="slide-index-badge">${idx + 1} / ${total}</div>
   </div>`;
@@ -367,6 +417,13 @@ function renderStats(slide, idx, total) {
 function renderIllustration(slide, idx, total) {
   const svg = ILLUS[slide.illus] || '';
   const bullets = slide.bullets || [];
+  const parsed = bullets.map(b => {
+    const col = b.indexOf('—');
+    if (col > 0) return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
+    const col2 = b.indexOf(':');
+    if (col2 > 0 && col2 < 40) return { title: b.slice(0, col2).trim(), body: b.slice(col2 + 1).trim() };
+    return { title: null, body: b };
+  });
   return `
   <div class="slide" data-slide="${idx}">
     <div class="slide-inner">
@@ -375,11 +432,14 @@ function renderIllustration(slide, idx, total) {
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="3" style="margin-bottom:0;">${slide.subheadline}</p>` : ''}
       <div class="img-text-row">
         <div class="img-panel" data-animate="fade-left" data-delay="4">${svg}</div>
-        <div class="text-panel">
-          ${bullets.map((b, i) => `
-            <div class="bullet-card" data-animate="fade-right" data-delay="${Math.min(i + 4, 8)}" style="margin-bottom:8px;">
-              <span class="bullet-num">${String(i + 1).padStart(2, '0')}</span>
-              <span class="bullet-text">${b}</span>
+        <div class="text-panel illus-cards">
+          ${parsed.map((p, i) => `
+            <div class="illus-point" data-animate="fade-right" data-delay="${Math.min(i + 4, 8)}">
+              <div class="illus-point-accent"></div>
+              <div class="illus-point-content">
+                ${p.title ? `<div class="illus-point-title">${p.title}</div>` : ''}
+                <div class="illus-point-body">${p.body}</div>
+              </div>
             </div>`).join('')}
         </div>
       </div>

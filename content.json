@@ -36,8 +36,8 @@
       "bullets": [
         "Inputs — Abstraction: natural language replaces formal commands; anyone can now use specialised software",
         "Outputs — Computation: AI expands what software produces — text, code, images, autonomous decisions",
-        "Human-to-computer interface evolves from mathematics → formal text → graphics → natural language",
-        "More people will use more computers for specialised purposes — but not necessarily the same people"
+        "Interface evolution — Mathematics → Formal Text → Graphics → Natural Language: the access barrier disappears",
+        "Net effect — More people using more software for more specialised purposes — but not the same people"
       ]
     },
     {
@@ -54,13 +54,13 @@
     {
       "type": "illustration",
       "headline": "AI's Primary Strategic Impact: Cost Structure",
-      "subheadline": "Most debate focuses on quality improvements. The more decisive lever is cost.",
+      "subheadline": "Most debate focuses on quality. The more decisive lever is cost.",
       "illus": "value-stick",
       "bullets": [
-        "Worth to Customer: AI can improve offering quality — but this is widely and hotly debated",
-        "Cost to Supplier: AI can structurally reduce the cost base — this is the more decisive lever",
-        "Ryanair beat British Airways not by being better, but by being cheaper at comparable value",
-        "Even imperfect AI is worth adopting when error costs are low and data is explicit and abundant"
+        "Worth to Customer — AI can raise quality: but this is uncertain, debated, and often incremental",
+        "Cost to Supplier — AI cuts the cost base: this is measurable, immediate, and structurally decisive",
+        "The Ryanair principle — cheaper beats better: lower cost at comparable value wins more customers",
+        "Adopt even when imperfect — low error cost + abundant data justifies AI agents even with quality gaps"
       ]
     },
     {
@@ -69,11 +69,11 @@
       "subheadline": "Wide AI availability lowers barriers to entry — threatening incumbents who hesitate.",
       "illus": "disruption",
       "bullets": [
-        "Blockbuster recognised Netflix's threat in 2000 — explored online DVD and Video-on-Demand",
-        "Launched a Netflix clone in 2003; Netflix was still only 1.5% of Blockbuster's size",
-        "Filed for bankruptcy in 2010 with $1 billion in debt",
-        "Broad AI adoption enables leaner, bolder new competitors to undercut incumbents",
-        "Survival requires self-disruption and calculated risk — not cautious optimisation"
+        "Blockbuster knew — In 2000 they explored online DVD and Video-on-Demand, but didn't fully commit",
+        "Netflix was tiny — In 2003 Blockbuster launched a Netflix clone; Netflix was still 1.5% of their size",
+        "Bankruptcy 2010 — $1 billion in debt. Recognition without action is not a strategy",
+        "AI replicates this dynamic — lower barriers let leaner, bolder entrants undercut incumbents on cost",
+        "Self-disruption is survival — calculated risk today beats cautious optimisation of a shrinking position"
       ]
     },
     {
@@ -81,11 +81,11 @@
       "headline": "Strategic Transformation: Two Imperatives",
       "subheadline": "Winners redesign the whole organisation — not just bolt on new tools.",
       "bullets": [
-        "1. Reevaluate ALL assets as data — not just digital systems or structured databases",
-        "2. Redesign the organisation from first principles, not around existing workstreams",
-        "Effective AI strategy requires acting now, not waiting for the technology to fully mature",
-        "Three implementation modes: Customise Model · Integrate APIs · Purchase Applications",
-        "Long-term profitability demands creating more value with AI than competitors — or ceding ground"
+        "Reevaluate all assets as data: Not just digital systems — physical processes, relationships, expertise all become training signal",
+        "Redesign from first principles: Don't layer AI onto existing workstreams. Rethink who does what and why",
+        "Act now, not later: Waiting for AI to mature cedes first-mover advantage to competitors who move first",
+        "Choose your mode deliberately: Customise Model · Integrate APIs · Purchase Applications — each has different lock-in",
+        "Create more value than rivals: Long-term profitability demands out-innovating competitors with AI — or losing ground"
       ]
     },
     {
@@ -98,11 +98,11 @@
       "headline": "What Is AI Ethics?",
       "subheadline": "Moral principles guiding how AI is built and deployed — not a compliance checkbox.",
       "bullets": [
-        "AI systems must benefit society, not only shareholders or the organisations that build them",
-        "Core pillars: Fairness, Transparency, Privacy, Safety, Accountability",
-        "AI learns from data — biased data encodes and amplifies human injustice at scale",
-        "High-stakes decisions (medical, legal, financial) are increasingly delegated to models",
-        "Ethics ensures AI development is guided in a socially responsible direction"
+        "Benefit society: AI systems must serve broader human interests, not only shareholders or developers",
+        "Five core pillars: Fairness, Transparency, Privacy, Safety and Accountability guide every design decision",
+        "Bias at scale: AI learns from data — biased data encodes and amplifies human injustice across millions of decisions",
+        "High-stakes delegation: Medical, legal, and financial decisions are already being made by or with AI models",
+        "Responsible direction: Ethics is the mechanism that steers AI development toward socially beneficial outcomes"
       ]
     },
     {
@@ -133,11 +133,11 @@
       "subheadline": "These are not hypothetical — they are happening now.",
       "illus": "ethics-cases",
       "bullets": [
-        "Judge used ChatGPT to advise on child's medical rights — ruled unethical by oversight body",
-        "Lawyer submitted AI-hallucinated case citations to court — faced sanctions and public censure",
-        "China's Social Credit System: 1,000 points per citizen, AI-monitored, rewards and punishments",
-        "Data centres consumed 22% of Ireland's energy in 2024 — growing with every AI query",
-        "ChatGPT uses ~0.5 litres of water per 5–50 prompts for server cooling"
+        "Judicial AI — A judge used ChatGPT to advise on a child's medical rights and was ruled unethical by an oversight body",
+        "Hallucination in court — A lawyer submitted AI-generated fake case citations; they faced sanctions and public censure",
+        "Social Credit — China's 1,000-point AI-monitored system rewards and punishes 14 million+ citizens based on behaviour",
+        "Environmental cost — Data centres consumed 22% of Ireland's energy in 2024, growing with every additional AI prompt",
+        "Water usage — ChatGPT uses approximately 0.5 litres of water per 5–50 prompts for server cooling alone"
       ]
     },
     {
@@ -156,12 +156,12 @@
       "headline": "Key Takeaways",
       "subheadline": "Strategy and ethics are not in tension — both demand anticipation and the courage to act.",
       "bullets": [
-        "Generative AI will keep improving — you are responsible for anticipating its trajectory",
-        "AI fundamentally changes who can access and use specialised computing power",
-        "Even weak AI may be worth adopting — structural cost savings can outweigh quality gaps",
-        "Wide adoption intensifies competition; self-disruption is the survival strategy for incumbents",
-        "Ethics is non-negotiable — bias, privacy, and accountability require proactive governance",
-        "Two questions: Where is our data? What must our organisation look like to compete?"
+        "Anticipate the curve: Generative AI will keep improving — leaders must plan for the trajectory, not the current state",
+        "Access is the revolution: AI changes who can use specialised computing — democratising and disrupting simultaneously",
+        "Cost beats quality: Even weak AI is worth adopting when structural cost savings outweigh quality trade-offs",
+        "Disrupt yourself first: Wide AI adoption intensifies competition — incumbents who wait become the Blockbuster",
+        "Ethics is not optional: Bias, privacy, and accountability require proactive governance — not reactive compliance",
+        "Two questions: Where is our data? What must our organisation look like to compete in five years?"
       ]
     },
     {
