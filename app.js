@@ -291,22 +291,19 @@ function renderSection(slide, idx, total) {
   </div>`;
 }
 
-/* Rich card grid — replaces plain bullet points */
+/* Rich card grid */
 function renderCards(bullets) {
   if (!bullets || !bullets.length) return '';
   const count = bullets.length;
-  /* Parse optional "Title: body" format */
   const parsed = bullets.map(b => {
     const col = b.indexOf(':');
-    if (col > 0 && col < 40) {
-      return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
-    }
+    if (col > 0 && col < 44) return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
     return { title: null, body: b };
   });
   const gridClass = count <= 3 ? 'card-row-3' : count === 4 ? 'card-row-4' : 'card-row-3';
-  return `<div class="card-grid ${gridClass}">
+  return `<div class="card-grid ${gridClass}" data-animate="fade-up" data-delay="4">
     ${parsed.map((p, i) => `
-      <div class="insight-card" data-animate="fade-up" data-delay="${Math.min(i + 3, 8)}">
+      <div class="insight-card">
         <div class="insight-card-num">${String(i + 1).padStart(2,'0')}</div>
         ${p.title ? `<div class="insight-card-title">${p.title}</div>` : ''}
         <div class="insight-card-body">${p.body}</div>
@@ -402,7 +399,7 @@ function renderStats(slide, idx, total) {
       <div class="slide-label" data-animate data-delay="1">Data</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="3">${slide.subheadline}</p>` : ''}
-      <div class="stat-row" data-animate="fade-up" data-delay="4">
+      <div class="stat-row">
         ${stats.map(s => `
           <div class="stat-block">
             <div class="stat-num">${s.num}</div>
@@ -418,10 +415,10 @@ function renderIllustration(slide, idx, total) {
   const svg = ILLUS[slide.illus] || '';
   const bullets = slide.bullets || [];
   const parsed = bullets.map(b => {
-    const col = b.indexOf('—');
-    if (col > 0) return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
-    const col2 = b.indexOf(':');
-    if (col2 > 0 && col2 < 40) return { title: b.slice(0, col2).trim(), body: b.slice(col2 + 1).trim() };
+    const dash = b.indexOf(' — ');
+    if (dash > 0 && dash < 44) return { title: b.slice(0, dash).trim(), body: b.slice(dash + 3).trim() };
+    const col = b.indexOf(':');
+    if (col > 0 && col < 44) return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
     return { title: null, body: b };
   });
   return `
@@ -432,9 +429,9 @@ function renderIllustration(slide, idx, total) {
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="3" style="margin-bottom:0;">${slide.subheadline}</p>` : ''}
       <div class="img-text-row">
         <div class="img-panel" data-animate="fade-left" data-delay="4">${svg}</div>
-        <div class="text-panel illus-cards">
-          ${parsed.map((p, i) => `
-            <div class="illus-point" data-animate="fade-right" data-delay="${Math.min(i + 4, 8)}">
+        <div class="illus-cards">
+          ${parsed.map((p) => `
+            <div class="illus-point">
               <div class="illus-point-accent"></div>
               <div class="illus-point-content">
                 ${p.title ? `<div class="illus-point-title">${p.title}</div>` : ''}
