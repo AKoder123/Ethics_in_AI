@@ -39,6 +39,13 @@
       "caption": "The fuel for AI. Volume of accessible data has grown 90× since 2010 and continues to accelerate. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
+      "type": "photo-slide",
+      "photoKey": "org_hierarchy",
+      "label": "Access Revolution",
+      "headline": "AI Changes Who Can Access Specialised Software",
+      "caption": "Previously, each worker needed to learn a specific tool (SAP, Photoshop, Excel). AI abstraction means one person can direct many — collapsing the traditional access hierarchy. Source: Prof. Andy Wu, Harvard Business School"
+    },
+    {
       "type": "illustration",
       "headline": "Two Ways AI Augments Computing",
       "subheadline": "The transformative shift is on the input side — who can access software — not just what it produces.",
@@ -72,6 +79,13 @@
         "The Ryanair principle — cheaper beats better: lower cost at comparable value wins more customers",
         "Adopt even when imperfect — low error cost + abundant data justifies AI agents even with quality gaps"
       ]
+    },
+    {
+      "type": "photo-slide",
+      "photoKey": "bananas",
+      "label": "Market Segmentation",
+      "headline": "Even a Slightly Different Product Captures a Whole New Market",
+      "caption": "Most consumers can't distinguish between nearly identical products — but the minority who can be reached at low marginal cost represents a structurally profitable segment. This is the AI competitive dynamic. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "illustration",
@@ -138,6 +152,13 @@
       }
     },
     {
+      "type": "photo-slide",
+      "photoKey": "nyt_lawyer",
+      "label": "Real-World Failure",
+      "headline": "The ChatGPT Lawyer: AI Hallucination in a Court of Law",
+      "caption": "A lawyer relied on AI to craft legal motions full of made-up case law, saying he 'did not comprehend' the chatbot could lead him astray. Faced court sanctions. Source: The New York Times, June 2023"
+    },
+    {
       "type": "illustration",
       "headline": "Real-World Ethical Failures",
       "subheadline": "These are not hypothetical — they are happening now.",
@@ -149,6 +170,13 @@
         "Environmental cost — Data centres consumed 22% of Ireland's energy in 2024, growing with every additional AI prompt",
         "Water usage — ChatGPT uses approximately 0.5 litres of water per 5–50 prompts for server cooling alone"
       ]
+    },
+    {
+      "type": "photo-slide",
+      "photoKey": "lawyers_chart",
+      "label": "Labour Market Shift",
+      "headline": "Bargaining Power: In-House Legal Grew 200%+ as Firms Cut External Spend",
+      "caption": "As AI tools enabled companies to bring legal work in-house, law firm growth stagnated. This pattern — technology shifting bargaining power from specialist suppliers to buyers — is now repeating across every knowledge profession. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "stats",
