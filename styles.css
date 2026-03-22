@@ -471,6 +471,71 @@ h3 {
 }
 .closing-presenter-line { width: 28px; height: 1px; background: rgba(255,255,255,0.22); }
 
+/* ─── PHOTO SLIDES ─── */
+.slide-photo {
+  background: var(--slate);
+  justify-content: flex-start;
+  padding-top: calc(var(--pad-y) * 0.8);
+  padding-bottom: calc(var(--pad-y) * 0.6);
+}
+
+/* Override label colour on dark background */
+.slide-photo .slide-label { color: rgba(255,255,255,0.42); }
+.slide-photo .slide-label::before { background: rgba(255,255,255,0.25); }
+.slide-photo h2 { color: #fff; font-size: clamp(1.2rem, 2.2vw, 1.9rem); margin-top: 6px; }
+
+.photo-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  height: 100%;
+  max-height: calc(100dvh - var(--topOffset) - 2px - var(--pad-y) * 1.4);
+}
+
+.photo-header {
+  flex-shrink: 0;
+  margin-bottom: 14px;
+}
+
+.photo-frame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0; /* critical — allows flex child to shrink */
+  gap: 8px;
+}
+
+.photo-img {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  object-fit: contain;
+  object-position: center top;
+  border-radius: var(--r);
+  display: block;
+}
+
+.photo-caption {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.38);
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 400;
+  padding: 0 8px;
+}
+
+/* PDF stage overrides for photo slides */
+#pdfStage .slide-photo { padding-top: 72px; padding-bottom: 52px; }
+#pdfStage .photo-inner { max-height: 900px; }
+
+/* Compact */
+@media (max-height: 640px) {
+  .slide-photo h2 { font-size: 1.2rem; }
+  .photo-header { margin-bottom: 8px; }
+  .photo-caption { font-size: 0.62rem; }
+}
+
 /* ─── PDF export ─── */
 body.exportingPdf [data-animate],
 body.exportingPdf .card-grid .insight-card,

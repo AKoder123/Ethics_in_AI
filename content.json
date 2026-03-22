@@ -18,15 +18,25 @@
       "subheadline": "ChatGPT reached 50% US market penetration faster than smartphones, TV, or the internet."
     },
     {
-      "type": "stats",
-      "headline": "Three Forces Compounding AI's Rise",
-      "subheadline": "Better models, cheaper compute, more data — converging simultaneously.",
-      "stats": [
-        { "num": "181 ZB", "label": "Global data generated in 2025, up from just 2 ZB in 2010" },
-        { "num": "~10×",   "label": "GPU performance improvement per decade — Huang's Law" },
-        { "num": "4",      "label": "Nested layers powering Gen AI: AI → Machine Learning → Deep Learning → Transformer" },
-        { "num": "36%",    "label": "YC Gen AI startups in 2023 targeting engineering, product & design roles" }
-      ]
+      "type": "photo-slide",
+      "photoKey": "timeline",
+      "label": "Market Context",
+      "headline": "Will AI Be the Next Technology Revolution?",
+      "caption": "Every decade, paradigm shifts lead to massive redistribution of profits and new market leaders. Source: Prof. Andy Wu, Harvard Business School"
+    },
+    {
+      "type": "photo-slide",
+      "photoKey": "huangs",
+      "label": "Hardware Economics",
+      "headline": "Huang's Law: GPU Performance Doubles — Price Collapses",
+      "caption": "Transistor counts grow exponentially while cost per FLOP falls — the hardware foundation making Gen AI possible. Source: Prof. Andy Wu, Harvard Business School"
+    },
+    {
+      "type": "photo-slide",
+      "photoKey": "data",
+      "label": "Data Explosion",
+      "headline": "Global Data Generation: 2 ZB to 181 ZB in 15 Years",
+      "caption": "The fuel for AI. Volume of accessible data has grown 90× since 2010 and continues to accelerate. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "illustration",
