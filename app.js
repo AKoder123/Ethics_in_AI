@@ -497,6 +497,33 @@ function renderPhotoSlide(slide, idx, total) {
   </div>`;
 }
 
+function renderVideoLocal(slide, idx, total) {
+  return `
+  <div class="slide slide-video" data-slide="${idx}">
+    <div class="slide-inner video-inner">
+      <div class="video-header" data-animate data-delay="1">
+        <div class="slide-label" style="margin-bottom:0;">${slide.label || 'Video'}</div>
+        <h2>${slide.headline}</h2>
+        ${slide.subheadline ? `<p class="subheadline">${slide.subheadline}</p>` : ''}
+      </div>
+      <div class="video-frame" data-animate="fade-up" data-delay="3">
+        <div class="video-embed-wrap">
+          <video
+            src="./${slide.filename || 'video.mp4'}"
+            controls
+            preload="metadata"
+            style="width:100%;height:100%;display:block;background:#000;"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        ${slide.caption ? `<p class="video-caption">${slide.caption}</p>` : ''}
+      </div>
+    </div>
+    <div class="slide-index-badge">${idx + 1} / ${total}</div>
+  </div>`;
+}
+
 function renderVideo(slide, idx, total) {
   // YouTube embed with modest branding, rel=0, no autoplay on load
   const embedUrl = `https://www.youtube.com/embed/${slide.videoId}?rel=0&modestbranding=1&color=white`;
@@ -528,6 +555,7 @@ function renderVideo(slide, idx, total) {
 function renderSlide(slide, idx, total) {
   switch (slide.type) {
     case 'photo-slide':    return renderPhotoSlide(slide, idx, total);
+    case 'video-local':    return renderVideoLocal(slide, idx, total);
     case 'video':          return renderVideo(slide, idx, total);
     case 'title':          return renderTitle(slide, idx, total);
     case 'section':        return renderSection(slide, idx, total);

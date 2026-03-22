@@ -190,8 +190,8 @@
       ]
     },
     {
-      "type": "video",
-      "videoId": "Yvs7f4UaKLo",
+      "type": "video-local",
+      "filename": "video.mp4",
       "label": "Provocation",
       "headline": "The Last Job on Earth",
       "subheadline": "Imagining a fully automated world — 2 min 52 sec",
@@ -199,7 +199,6 @@
     },
     {
       "subheadline": "Strategy and ethics are not in tension — both demand anticipation and the courage to act.",
-      "headline":"Key Takeaways",
       "bullets": [
         "Anticipate the curve: Generative AI will keep improving — leaders must plan for the trajectory, not the current state",
         "Access is the revolution: AI changes who can use specialised computing — democratising and disrupting simultaneously",
