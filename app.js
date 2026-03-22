@@ -497,6 +497,34 @@ function renderPhotoSlide(slide, idx, total) {
   </div>`;
 }
 
+function renderVideoGdrive(slide, idx, total) {
+  // Google Drive embed URL — converts share link to embeddable player
+  const embedUrl = `https://drive.google.com/file/d/${slide.fileId}/preview`;
+  return `
+  <div class="slide slide-video" data-slide="${idx}">
+    <div class="slide-inner video-inner">
+      <div class="video-header" data-animate data-delay="1">
+        <div class="slide-label" style="margin-bottom:0;">${slide.label || 'Video'}</div>
+        <h2>${slide.headline}</h2>
+        ${slide.subheadline ? `<p class="subheadline">${slide.subheadline}</p>` : ''}
+      </div>
+      <div class="video-frame" data-animate="fade-up" data-delay="3">
+        <div class="video-embed-wrap">
+          <iframe
+            src="${embedUrl}"
+            title="${slide.headline}"
+            allow="autoplay"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        ${slide.caption ? `<p class="video-caption">${slide.caption}</p>` : ''}
+      </div>
+    </div>
+    <div class="slide-index-badge">${idx + 1} / ${total}</div>
+  </div>`;
+}
+
 function renderVideoLocal(slide, idx, total) {
   return `
   <div class="slide slide-video" data-slide="${idx}">
@@ -555,6 +583,7 @@ function renderVideo(slide, idx, total) {
 function renderSlide(slide, idx, total) {
   switch (slide.type) {
     case 'photo-slide':    return renderPhotoSlide(slide, idx, total);
+    case 'video-gdrive':   return renderVideoGdrive(slide, idx, total);
     case 'video-local':    return renderVideoLocal(slide, idx, total);
     case 'video':          return renderVideo(slide, idx, total);
     case 'title':          return renderTitle(slide, idx, total);

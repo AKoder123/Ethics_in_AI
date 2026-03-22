@@ -190,8 +190,8 @@
       ]
     },
     {
-      "type": "video-local",
-      "filename": "video.mp4",
+      "type": "video-gdrive",
+      "fileId": "1lfjQLTFAahF_Lyma92YbTx4zPkqR-NoN",
       "label": "Provocation",
       "headline": "The Last Job on Earth",
       "subheadline": "Imagining a fully automated world — 2 min 52 sec",
