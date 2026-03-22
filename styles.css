@@ -536,6 +536,62 @@ h3 {
   .photo-caption { font-size: 0.62rem; }
 }
 
+/* ─── VIDEO SLIDE ─── */
+.slide-video {
+  background: var(--slate);
+  justify-content: flex-start;
+  padding-top: calc(var(--pad-y) * 0.8);
+  padding-bottom: calc(var(--pad-y) * 0.6);
+}
+.slide-video .slide-label { color: rgba(255,255,255,.42); }
+.slide-video .slide-label::before { background: rgba(255,255,255,.25); }
+.slide-video h2 { color: #fff; font-size: clamp(1.2rem,2.2vw,1.9rem); margin-top: 6px; }
+.slide-video .subheadline { color: rgba(255,255,255,.55); margin-top: 4px; }
+
+.video-inner {
+  display: flex; flex-direction: column; gap: 0; height: 100%;
+  max-height: calc(100dvh - var(--topOffset) - 2px - var(--pad-y) * 1.4);
+}
+.video-header { flex-shrink: 0; margin-bottom: 14px; }
+.video-frame {
+  flex: 1; display: flex; flex-direction: column; min-height: 0; gap: 8px;
+  position: relative;
+}
+.video-embed-wrap {
+  flex: 1; min-height: 0;
+  position: relative;
+  border-radius: var(--r);
+  overflow: hidden;
+  background: #000;
+}
+.video-embed-wrap iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  border: none; display: block;
+}
+.video-caption {
+  flex-shrink: 0; font-size: .68rem; color: rgba(255,255,255,.38);
+  text-align: center; line-height: 1.4; font-weight: 400; padding: 0 8px;
+}
+
+/* PDF stage */
+#pdfStage .slide-video { padding-top: 72px; padding-bottom: 52px; }
+#pdfStage .video-inner { max-height: 900px; }
+#pdfStage .video-embed-wrap { background: #1B2A3B; border: 1px solid rgba(255,255,255,.1); border-radius: 6px; }
+#pdfStage .video-embed-wrap::after {
+  content: '▶  Video: https://youtu.be/Yvs7f4UaKLo';
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: rgba(255,255,255,.6); font-family: var(--font); font-size: 1rem; font-weight: 500;
+  letter-spacing: .04em;
+}
+#pdfStage .video-embed-wrap iframe { display: none; }
+
+/* Compact */
+@media (max-height: 640px) {
+  .slide-video h2 { font-size: 1.2rem; }
+  .video-header { margin-bottom: 8px; }
+}
+
 /* ─── PDF export ─── */
 body.exportingPdf [data-animate],
 body.exportingPdf .card-grid .insight-card,

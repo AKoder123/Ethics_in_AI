@@ -190,8 +190,14 @@
       ]
     },
     {
-      "type": "content",
-      "headline": "Key Takeaways",
+      "type": "video",
+      "videoId": "Yvs7f4UaKLo",
+      "label": "Provocation",
+      "headline": "The Last Job on Earth",
+      "subheadline": "Imagining a fully automated world — 2 min 52 sec",
+      "caption": "A short film exploring what a world without human labour might look like, and what it means for how we think about AI strategy today."
+    },
+    {
       "subheadline": "Strategy and ethics are not in tension — both demand anticipation and the courage to act.",
       "bullets": [
         "Anticipate the curve: Generative AI will keep improving — leaders must plan for the trajectory, not the current state",

@@ -497,9 +497,38 @@ function renderPhotoSlide(slide, idx, total) {
   </div>`;
 }
 
+function renderVideo(slide, idx, total) {
+  // YouTube embed with modest branding, rel=0, no autoplay on load
+  const embedUrl = `https://www.youtube.com/embed/${slide.videoId}?rel=0&modestbranding=1&color=white`;
+  return `
+  <div class="slide slide-video" data-slide="${idx}">
+    <div class="slide-inner video-inner">
+      <div class="video-header" data-animate data-delay="1">
+        <div class="slide-label" style="margin-bottom:0;">${slide.label || 'Video'}</div>
+        <h2>${slide.headline}</h2>
+        ${slide.subheadline ? `<p class="subheadline">${slide.subheadline}</p>` : ''}
+      </div>
+      <div class="video-frame" data-animate="fade-up" data-delay="3">
+        <div class="video-embed-wrap">
+          <iframe
+            src="${embedUrl}"
+            title="${slide.headline}"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        ${slide.caption ? `<p class="video-caption">${slide.caption}</p>` : ''}
+      </div>
+    </div>
+    <div class="slide-index-badge">${idx + 1} / ${total}</div>
+  </div>`;
+}
+
 function renderSlide(slide, idx, total) {
   switch (slide.type) {
     case 'photo-slide':    return renderPhotoSlide(slide, idx, total);
+    case 'video':          return renderVideo(slide, idx, total);
     case 'title':          return renderTitle(slide, idx, total);
     case 'section':        return renderSection(slide, idx, total);
     case 'beforeAfter':    return renderBeforeAfter(slide, idx, total);
