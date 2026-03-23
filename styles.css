@@ -128,6 +128,8 @@ body {
   color: var(--divider); z-index: 10; pointer-events: none;
 }
 
+.slide-chrome, .chrome-window, .chrome-pills { display: none !important; }
+
 /* ─── Animations ─── */
 
 /* Base: every [data-animate] fades+slides up */
@@ -463,7 +465,7 @@ h3 { font-size: 20px; font-weight: 600; color: var(--cobalt); margin-bottom: 6px
 .slide-photo h2 { color: #fff; font-size: clamp(22px,2.4vw,34px); margin-top: 4px; }
 .photo-inner  { display: flex; flex-direction: column; height: 100%; max-height: calc(100dvh - var(--topOffset) - 4px - var(--pad-y)*2 - 10px); }
 .photo-header { flex-shrink: 0; margin-bottom: 10px; }
-.photo-frame  { flex: 1 1 0; display: flex; flex-direction: column; min-height: 0; gap: 6px; }
+.photo-frame  { flex: 1 1 0; display: flex; flex-direction: column; min-height: 0; gap: 6px; background: transparent; border: none; box-shadow: none; }
 .photo-img    { flex: 1 1 0; width: 100%; min-height: 0; object-fit: contain; object-position: center top; border-radius: var(--r); display: block; }
 .photo-caption { flex-shrink: 0; font-size: 13px; color: rgba(255,255,255,.4); text-align: center; line-height: 1.4; padding: 0 8px; }
 
@@ -478,7 +480,7 @@ h3 { font-size: 20px; font-weight: 600; color: var(--cobalt); margin-bottom: 6px
 .slide-video .subheadline { color: rgba(255,255,255,.55); font-size: 16px; }
 .video-inner  { display: flex; flex-direction: column; height: 100%; max-height: calc(100dvh - var(--topOffset) - 4px - var(--pad-y)*2 - 10px); }
 .video-header { flex-shrink: 0; margin-bottom: 10px; }
-.video-frame  { flex: 1 1 0; display: flex; flex-direction: column; min-height: 0; gap: 6px; }
+.video-frame  { flex: 1 1 0; display: flex; flex-direction: column; min-height: 0; gap: 6px; background: transparent; border: none; box-shadow: none; }
 .video-embed-wrap { flex: 1 1 0; min-height: 0; position: relative; border-radius: var(--r); overflow: hidden; background: #000; }
 .video-embed-wrap iframe,
 .video-embed-wrap video { position: absolute; inset: 0; width: 100%; height: 100%; border: none; display: block; background: #000; }
