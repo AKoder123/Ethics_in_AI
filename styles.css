@@ -29,8 +29,8 @@
   --t-label:    13px;   /* eyebrow labels                */
   --t-sub:      18px;   /* subheadline                   */
   --t-card-num: 12px;   /* card sequence number          */
-  --t-card-ttl: 17px;   /* card / point title            */
-  --t-card-bod: 15px;   /* card / point body             */
+  --t-card-ttl: 18px;   /* card / point title            */
+  --t-card-bod: 15.5px; /* card / point body             */
   --t-col-ttl:  18px;   /* two-col section title         */
   --t-col-bod:  15px;   /* two-col bullet                */
   --t-cell-lbl: 19px;   /* matrix quadrant label         */
@@ -454,8 +454,8 @@ h3 { font-size: 20px; font-weight: 600; color: var(--cobalt); margin-bottom: 6px
 .insight-card:hover { border-color: var(--cobalt); box-shadow: 0 3px 14px rgba(59,91,219,.09); transform: translateY(-2px); }
 .insight-card-num   { font-size: var(--t-card-num); font-weight: 600; color: var(--cobalt); letter-spacing: .08em; opacity: .65; flex-shrink: 0; }
 .insight-card:nth-child(3n+2) .insight-card-num { color: var(--coral); }
-.insight-card-title { font-size: var(--t-card-ttl); font-weight: 600; color: var(--ink); line-height: 1.25; flex-shrink: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.insight-card-body  { font-size: var(--t-card-bod); color: var(--ink2); line-height: 1.45; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.insight-card-title { font-size: var(--t-card-ttl); font-weight: 600; color: var(--ink); line-height: 1.22; flex-shrink: 0; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.insight-card-body  { font-size: var(--t-card-bod); color: var(--ink2); line-height: 1.42; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 
 /* ─── CLOSING ─── */
 .slide-closing { background: var(--slate); }
