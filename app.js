@@ -625,6 +625,7 @@ async function init() {
   deck.innerHTML = slides.map((s, i) => renderSlide(s, i, slides.length)).join('');
 
   updateCounter();
+  setupDots();
   setupObserver();
   setupKeyboard();
   setupScrollSync();
@@ -639,6 +640,30 @@ function updateCounter() {
   if (el) el.textContent = `${currentSlide + 1} / ${slides.length}`;
   const fill = document.getElementById('progressFill');
   if (fill) fill.style.width = `${((currentSlide + 1) / slides.length) * 100}%`;
+  // update dots
+  document.querySelectorAll('.slide-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentSlide);
+    // adapt dot colour for dark slides
+    const slideType = slides[i]?.type;
+    const isDark = slideType === 'section' || slideType === 'closing' || slideType === 'photo-slide' || slideType === 'video-gdrive' || slideType === 'video-local' || slideType === 'video';
+    d.style.setProperty('--dot-bg', isDark ? 'rgba(255,255,255,0.35)' : '');
+  });
+}
+
+function setupDots() {
+  const container = document.getElementById('slideDots');
+  if (!container) return;
+  container.innerHTML = '';
+  slides.forEach((s, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slide-dot';
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => goToSlide(i));
+    // tooltip on hover
+    dot.title = s.headline || s.photoKey || `Slide ${i + 1}`;
+    container.appendChild(dot);
+  });
+  updateCounter(); // set initial active state
 }
 
 function goToSlide(n) {
