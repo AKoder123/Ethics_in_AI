@@ -250,9 +250,25 @@ const ILLUS = {
 
 /* ── Renderers ────────────────────────────────────────── */
 
+function renderSlideChrome(slide, idx, total) {
+  const kind = (slide.type || 'content').replace(/-/g, ' ');
+  const label = slide.label || kind;
+  return `
+    <div class="slide-chrome" aria-hidden="true">
+      <div class="chrome-window">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="chrome-pills">
+        <span class="chrome-pill">${label}</span>
+        <span class="chrome-pill chrome-pill-soft">${idx + 1} of ${total}</span>
+      </div>
+    </div>`;
+}
+
 function renderTitle(slide, idx, total) {
   return `
   <div class="slide slide-title intro-conclusion-center" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="title-cobalt-rule"></div>
     <div class="slide-inner" style="max-width:840px;">
       <div class="title-eyebrow" data-animate data-delay="1">Stephen Rando PhD · 2026</div>
@@ -273,6 +289,7 @@ function renderSection(slide, idx, total) {
   const num = String(idx + 1).padStart(2, '0');
   return `
   <div class="slide slide-section" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="section-index" aria-hidden="true">${num}</div>
     <div class="slide-inner" style="max-width:720px; position:relative; z-index:2;">
       <div class="slide-label" data-animate data-delay="1">Section</div>
@@ -311,6 +328,7 @@ function renderCards(bullets) {
 function renderContent(slide, idx, total) {
   return `
   <div class="slide illustration-${slide.illus || 'generic'}" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Insight</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -325,6 +343,7 @@ function renderBeforeAfter(slide, idx, total) {
   const L = slide.left || {}, R = slide.right || {};
   return `
   <div class="slide" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Framework</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -348,6 +367,7 @@ function renderMatrix(slide, idx, total) {
   const cells = slide.quadrants || [];
   return `
   <div class="slide" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Decision Framework</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -375,6 +395,7 @@ function renderMatrix(slide, idx, total) {
 function renderAdoptionChart(slide, idx, total) {
   return `
   <div class="slide" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Market Context</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -392,6 +413,7 @@ function renderStats(slide, idx, total) {
   const stats = slide.stats || [];
   return `
   <div class="slide" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Data</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -421,6 +443,7 @@ function renderIllustration(slide, idx, total) {
   const illus5 = parsed.length >= 5 ? ' illus-cards-2col' : '';
   return `
   <div class="slide illustration-${slide.illus || 'generic'}" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Analysis</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -446,6 +469,7 @@ function renderIllustration(slide, idx, total) {
 function renderClosing(slide, idx, total) {
   return `
   <div class="slide slide-closing intro-conclusion-center" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner" style="max-width:720px;">
       <div class="slide-label" data-animate data-delay="1">Closing</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -464,6 +488,7 @@ function renderPhotoSlide(slide, idx, total) {
   const src = PHOTOS[slide.photoKey] || '';
   return `
   <div class="slide slide-photo" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner photo-inner">
       <div class="photo-header" data-animate data-delay="1">
         <div class="slide-label" style="margin-bottom:0;">${slide.label || 'Visual'}</div>
@@ -488,6 +513,7 @@ function renderVideoGdrive(slide, idx, total) {
   const embedUrl = `https://drive.google.com/file/d/${slide.fileId}/preview`;
   return `
   <div class="slide slide-video" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner video-inner">
       <div class="video-header" data-animate data-delay="1">
         <div class="slide-label" style="margin-bottom:0;">${slide.label || 'Video'}</div>
@@ -514,6 +540,7 @@ function renderVideoGdrive(slide, idx, total) {
 function renderVideoLocal(slide, idx, total) {
   return `
   <div class="slide slide-video" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner video-inner">
       <div class="video-header" data-animate data-delay="1">
         <div class="slide-label" style="margin-bottom:0;">${slide.label || 'Video'}</div>
@@ -543,6 +570,7 @@ function renderVideo(slide, idx, total) {
   const embedUrl = `https://www.youtube.com/embed/${slide.videoId}?rel=0&modestbranding=1&color=white`;
   return `
   <div class="slide slide-video" data-slide="${idx}">
+    ${renderSlideChrome(slide, idx, total)}
     <div class="slide-inner video-inner">
       <div class="video-header" data-animate data-delay="1">
         <div class="slide-label" style="margin-bottom:0;">${slide.label || 'Video'}</div>
@@ -611,6 +639,7 @@ async function init() {
   setupKeyboard();
   setupScrollSync();
   setupPdfExport(data);
+  setupPointerEffects();
 
   const first = deck.querySelector('.slide');
   if (first) first.classList.add('is-active');
@@ -695,6 +724,22 @@ function setupObserver() {
 }
 
 /* ── PDF export ─────────────────────────────────────────── */
+
+function setupPointerEffects() {
+  const deck = document.getElementById('deck');
+  if (!deck) return;
+  const updatePointer = (clientX, clientY) => {
+    const active = document.querySelector('.slide.is-active') || document.querySelector('.slide');
+    if (!active) return;
+    const rect = active.getBoundingClientRect();
+    const x = Math.max(0, Math.min(rect.width, clientX - rect.left));
+    const y = Math.max(0, Math.min(rect.height, clientY - rect.top));
+    active.style.setProperty('--mx', `${x}px`);
+    active.style.setProperty('--my', `${y}px`);
+  };
+  deck.addEventListener('pointermove', (e) => updatePointer(e.clientX, e.clientY), { passive: true });
+}
+
 function setupPdfExport(data) {
   const btn = document.getElementById('exportPdfBtn');
   if (!btn) return;
