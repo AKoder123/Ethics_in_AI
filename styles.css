@@ -48,9 +48,7 @@
 html { font-size: 16px; }   /* back to normal — all sizes are px */
 body {
   font-family: var(--font);
-  background:
-    radial-gradient(circle at top left, rgba(59,91,219,0.08), transparent 24%),
-    linear-gradient(180deg, #F8FAFD 0%, var(--bg) 100%); color: var(--ink);
+  background: var(--bg); color: var(--ink);
   overflow: hidden; height: 100dvh; width: 100vw;
   -webkit-font-smoothing: antialiased;
 }
@@ -121,26 +119,12 @@ body {
   width: 100%; display: flex; flex-direction: column; justify-content: center;
   padding: var(--pad-y) var(--pad-x) var(--pad-y) calc(var(--pad-x) + 10px);
   position: relative; overflow: hidden;
-  background:
-    radial-gradient(circle at 14% 16%, rgba(111,136,234,0.16), transparent 23%),
-    radial-gradient(circle at 84% 14%, rgba(224,122,95,0.08), transparent 20%),
-    linear-gradient(135deg, #EEF3FB 0%, #E9F0FB 46%, #E6EDF8 100%);
+  background: #F7F9FC;
 }
-.slide::before {
-  content: '';
-  position: absolute; inset: auto -8% -18% auto; width: 48vw; height: 48vw;
-  max-width: 680px; max-height: 680px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(59,91,219,0.12) 0%, rgba(59,91,219,0.05) 28%, rgba(59,91,219,0) 68%);
-  transform: translate3d(0,0,0);
-  pointer-events: none; opacity: .95;
-}
+.slide::before,
 .slide::after {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(180deg, rgba(59,91,219,0.028) 0%, rgba(59,91,219,0.012) 42%, rgba(59,91,219,0) 100%),
-    radial-gradient(520px 260px at var(--mx) var(--my), rgba(126,150,196,0.11), rgba(126,150,196,0) 62%);
-  pointer-events: none; opacity: .78;
+  content: none;
+  display: none;
 }
 
 .slide-inner::before { display: none; }
