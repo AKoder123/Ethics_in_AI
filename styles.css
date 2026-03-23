@@ -32,8 +32,8 @@
   --t-label:    13px;   /* eyebrow labels                */
   --t-sub:      18px;   /* subheadline                   */
   --t-card-num: 12px;   /* card sequence number          */
-  --t-card-ttl: 19px;   /* card / point title            */
-  --t-card-bod: 16px; /* card / point body             */
+  --t-card-ttl: 18px;   /* card / point title            */
+  --t-card-bod: 15.5px; /* card / point body             */
   --t-col-ttl:  18px;   /* two-col section title         */
   --t-col-bod:  15px;   /* two-col bullet                */
   --t-cell-lbl: 19px;   /* matrix quadrant label         */
@@ -48,7 +48,9 @@
 html { font-size: 16px; }   /* back to normal — all sizes are px */
 body {
   font-family: var(--font);
-  background: var(--bg); color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(59,91,219,0.08), transparent 24%),
+    linear-gradient(180deg, #F8FAFD 0%, var(--bg) 100%); color: var(--ink);
   overflow: hidden; height: 100dvh; width: 100vw;
   -webkit-font-smoothing: antialiased;
 }
@@ -119,12 +121,26 @@ body {
   width: 100%; display: flex; flex-direction: column; justify-content: center;
   padding: var(--pad-y) var(--pad-x) var(--pad-y) calc(var(--pad-x) + 10px);
   position: relative; overflow: hidden;
-  background: #F7F9FC;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(111,136,234,0.14), transparent 24%),
+    radial-gradient(circle at 86% 14%, rgba(224,122,95,0.10), transparent 22%),
+    linear-gradient(135deg, #F8FAFD 0%, #F1F5FB 42%, #EEF3FB 100%);
 }
-.slide::before,
+.slide::before {
+  content: '';
+  position: absolute; inset: auto -8% -18% auto; width: 48vw; height: 48vw;
+  max-width: 680px; max-height: 680px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,91,219,0.12) 0%, rgba(59,91,219,0.05) 28%, rgba(59,91,219,0) 68%);
+  transform: translate3d(0,0,0);
+  pointer-events: none; opacity: .95;
+}
 .slide::after {
-  content: none;
-  display: none;
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0) 100%),
+    radial-gradient(520px 260px at var(--mx) var(--my), rgba(255,255,255,0.32), rgba(255,255,255,0) 60%);
+  pointer-events: none; opacity: .85;
 }
 
 .slide-inner::before { display: none; }
@@ -490,7 +506,7 @@ h3 { font-size: 20px; font-weight: 600; color: var(--cobalt); margin-bottom: 6px
 
 .insight-card {
   background: var(--surface); border: 1px solid var(--divider); border-radius: var(--r);
-  padding: 11px 14px; display: flex; flex-direction: column; gap: 3px;
+  padding: 12px 15px; display: flex; flex-direction: column; gap: 4px;
   position: relative; overflow: hidden; min-height: 0;
   transition: border-color .15s, box-shadow .15s, transform .2s;
 }
@@ -503,8 +519,8 @@ h3 { font-size: 20px; font-weight: 600; color: var(--cobalt); margin-bottom: 6px
 .insight-card:hover { border-color: var(--cobalt); box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .insight-card-num   { font-size: var(--t-card-num); font-weight: 600; color: var(--cobalt); letter-spacing: .08em; opacity: .65; flex-shrink: 0; }
 .insight-card:nth-child(3n+2) .insight-card-num { color: var(--coral); }
-.insight-card-title { font-size: var(--t-card-ttl); font-weight: 600; color: var(--ink); line-height: 1.2; flex-shrink: 0; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
-.insight-card-body  { font-size: var(--t-card-bod); color: var(--ink2); line-height: 1.38; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.insight-card-title { font-size: var(--t-card-ttl); font-weight: 600; color: var(--ink); line-height: 1.22; flex-shrink: 0; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.insight-card-body  { font-size: var(--t-card-bod); color: var(--ink2); line-height: 1.42; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 
 /* ─── CLOSING ─── */
 .slide-closing { background: var(--slate); }

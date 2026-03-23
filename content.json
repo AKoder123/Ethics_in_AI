@@ -28,33 +28,33 @@
       "type": "photo-slide",
       "photoKey": "huangs",
       "label": "Hardware Economics",
-      "headline": "Huang's Law: GPU Performance Doubles \u2014 Price Collapses",
-      "caption": "Transistor counts grow exponentially while cost per FLOP falls \u2014 the hardware foundation making Gen AI possible. Source: Prof. Andy Wu, Harvard Business School"
+      "headline": "Huang's Law: GPU Performance Doubles — Price Collapses",
+      "caption": "Transistor counts grow exponentially while cost per FLOP falls — the hardware foundation making Gen AI possible. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "photo-slide",
       "photoKey": "data",
       "label": "Data Explosion",
       "headline": "Global Data Generation: 2 ZB to 181 ZB in 15 Years",
-      "caption": "The fuel for AI. Volume of accessible data has grown 90\u00d7 since 2010 and continues to accelerate. Source: Prof. Andy Wu, Harvard Business School"
+      "caption": "The fuel for AI. Volume of accessible data has grown 90× since 2010 and continues to accelerate. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "photo-slide",
       "photoKey": "org_hierarchy",
       "label": "Access Revolution",
       "headline": "AI Changes Who Can Access Specialised Software",
-      "caption": "Previously, each worker needed to learn a specific tool (SAP, Photoshop, Excel). AI abstraction means one person can direct many \u2014 collapsing the traditional access hierarchy. Source: Prof. Andy Wu, Harvard Business School"
+      "caption": "Previously, each worker needed to learn a specific tool (SAP, Photoshop, Excel). AI abstraction means one person can direct many — collapsing the traditional access hierarchy. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "illustration",
       "headline": "Two Ways AI Augments Computing",
-      "subheadline": "The transformative shift is on the input side \u2014 who can access software \u2014 not just what it produces.",
+      "subheadline": "The transformative shift is on the input side — who can access software — not just what it produces.",
       "illus": "inputs-outputs",
       "bullets": [
-        "Inputs \u2014 Abstraction: natural language replaces formal commands; anyone can now use specialised software",
-        "Outputs \u2014 Computation: AI expands what software produces \u2014 text, code, images, autonomous decisions",
-        "Interface evolution \u2014 Mathematics \u2192 Formal Text \u2192 Graphics \u2192 Natural Language: the access barrier disappears",
-        "Net effect \u2014 More people using more software for more specialised purposes \u2014 but not the same people"
+        "Inputs — Abstraction: natural language replaces formal commands; anyone can now use specialised software",
+        "Outputs — Computation: AI expands what software produces — text, code, images, autonomous decisions",
+        "Interface evolution — Mathematics → Formal Text → Graphics → Natural Language: the access barrier disappears",
+        "Net effect — More people using more software for more specialised purposes — but not the same people"
       ]
     },
     {
@@ -62,34 +62,10 @@
       "headline": "The AI Adoption Matrix",
       "subheadline": "Where should humans stay in the loop?",
       "quadrants": [
-        {
-          "label": "Creative Catalyst",
-          "sublabel": "Generalist + AI",
-          "desc": "Tacit knowledge + low error cost \u2192 AI creates options, human selects",
-          "x": "low",
-          "y": "tacit"
-        },
-        {
-          "label": "Human First",
-          "sublabel": "Expert",
-          "desc": "Tacit knowledge + high error cost \u2192 Human leads and does the heavy lifting",
-          "x": "high",
-          "y": "tacit"
-        },
-        {
-          "label": "No Regrets",
-          "sublabel": "AI Agent",
-          "desc": "Explicit data + low error cost \u2192 AI acts autonomously, no human in loop",
-          "x": "low",
-          "y": "explicit"
-        },
-        {
-          "label": "Quality Control",
-          "sublabel": "Specialist + AI",
-          "desc": "Explicit data + high error cost \u2192 AI produces work, human verifies",
-          "x": "high",
-          "y": "explicit"
-        }
+        { "label": "Creative Catalyst", "sublabel": "Generalist + AI",  "desc": "Tacit knowledge + low error cost → AI creates options, human selects", "x":"low","y":"tacit" },
+        { "label": "Human First",       "sublabel": "Expert",            "desc": "Tacit knowledge + high error cost → Human leads and does the heavy lifting", "x":"high","y":"tacit" },
+        { "label": "No Regrets",        "sublabel": "AI Agent",          "desc": "Explicit data + low error cost → AI acts autonomously, no human in loop", "x":"low","y":"explicit" },
+        { "label": "Quality Control",   "sublabel": "Specialist + AI",   "desc": "Explicit data + high error cost → AI produces work, human verifies", "x":"high","y":"explicit" }
       ]
     },
     {
@@ -98,10 +74,10 @@
       "subheadline": "Most debate focuses on quality. The more decisive lever is cost.",
       "illus": "value-stick",
       "bullets": [
-        "Worth to Customer \u2014 AI can raise quality: but this is uncertain, debated, and often incremental",
-        "Cost to Supplier \u2014 AI cuts the cost base: this is measurable, immediate, and structurally decisive",
-        "The Ryanair principle \u2014 cheaper beats better: lower cost at comparable value wins more customers",
-        "Adopt even when imperfect \u2014 low error cost + abundant data justifies AI agents even with quality gaps"
+        "Worth to Customer — AI can raise quality: but this is uncertain, debated, and often incremental",
+        "Cost to Supplier — AI cuts the cost base: this is measurable, immediate, and structurally decisive",
+        "The Ryanair principle — cheaper beats better: lower cost at comparable value wins more customers",
+        "Adopt even when imperfect — low error cost + abundant data justifies AI agents even with quality gaps"
       ]
     },
     {
@@ -109,31 +85,31 @@
       "photoKey": "bananas",
       "label": "Market Segmentation",
       "headline": "Even a Slightly Different Product Captures a Whole New Market",
-      "caption": "Most consumers can't distinguish between nearly identical products \u2014 but the minority who can be reached at low marginal cost represents a structurally profitable segment. This is the AI competitive dynamic. Source: Prof. Andy Wu, Harvard Business School"
+      "caption": "Most consumers can't distinguish between nearly identical products — but the minority who can be reached at low marginal cost represents a structurally profitable segment. This is the AI competitive dynamic. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "illustration",
       "headline": "Industry Disruption: The Blockbuster Warning",
-      "subheadline": "Wide AI availability lowers barriers to entry \u2014 threatening incumbents who hesitate.",
+      "subheadline": "Wide AI availability lowers barriers to entry — threatening incumbents who hesitate.",
       "illus": "disruption",
       "bullets": [
-        "Blockbuster knew \u2014 In 2000 they explored online DVD and Video-on-Demand, but didn't fully commit",
-        "Netflix was tiny \u2014 In 2003 Blockbuster launched a Netflix clone; Netflix was still 1.5% of their size",
-        "Bankruptcy 2010 \u2014 $1 billion in debt. Recognition without action is not a strategy",
-        "AI replicates this dynamic \u2014 lower barriers let leaner, bolder entrants undercut incumbents on cost",
-        "Self-disruption is survival \u2014 calculated risk today beats cautious optimisation of a shrinking position"
+        "Blockbuster knew — In 2000 they explored online DVD and Video-on-Demand, but didn't fully commit",
+        "Netflix was tiny — In 2003 Blockbuster launched a Netflix clone; Netflix was still 1.5% of their size",
+        "Bankruptcy 2010 — $1 billion in debt. Recognition without action is not a strategy",
+        "AI replicates this dynamic — lower barriers let leaner, bolder entrants undercut incumbents on cost",
+        "Self-disruption is survival — calculated risk today beats cautious optimisation of a shrinking position"
       ]
     },
     {
       "type": "content",
       "headline": "Strategic Transformation: Two Imperatives",
-      "subheadline": "Winners redesign the whole organisation \u2014 not just bolt on new tools.",
+      "subheadline": "Winners redesign the whole organisation — not just bolt on new tools.",
       "bullets": [
-        "Reevaluate all assets as data: Not just digital systems \u2014 physical processes, relationships, expertise all become training signal",
+        "Reevaluate all assets as data: Not just digital systems — physical processes, relationships, expertise all become training signal",
         "Redesign from first principles: Don't layer AI onto existing workstreams. Rethink who does what and why",
         "Act now, not later: Waiting for AI to mature cedes first-mover advantage to competitors who move first",
-        "Choose your mode deliberately: Customise Model \u00b7 Integrate APIs \u00b7 Purchase Applications \u2014 each has different lock-in",
-        "Create more value than rivals: Long-term profitability demands out-innovating competitors with AI \u2014 or losing ground"
+        "Choose your mode deliberately: Customise Model · Integrate APIs · Purchase Applications — each has different lock-in",
+        "Create more value than rivals: Long-term profitability demands out-innovating competitors with AI — or losing ground"
       ]
     },
     {
@@ -144,11 +120,11 @@
     {
       "type": "content",
       "headline": "What Is AI Ethics?",
-      "subheadline": "Moral principles guiding how AI is built and deployed \u2014 not a compliance checkbox.",
+      "subheadline": "Moral principles guiding how AI is built and deployed — not a compliance checkbox.",
       "bullets": [
         "Benefit society: AI systems must serve broader human interests, not only shareholders or developers",
         "Five core pillars: Fairness, Transparency, Privacy, Safety and Accountability guide every design decision",
-        "Bias at scale: AI learns from data \u2014 biased data encodes and amplifies human injustice across millions of decisions",
+        "Bias at scale: AI learns from data — biased data encodes and amplifies human injustice across millions of decisions",
         "High-stakes delegation: Medical, legal, and financial decisions are already being made by or with AI models",
         "Responsible direction: Ethics is the mechanism that steers AI development toward socially beneficial outcomes"
       ]
@@ -156,22 +132,22 @@
     {
       "type": "beforeAfter",
       "headline": "Seven Ethical Principles for AI Development",
-      "subheadline": "Governance without societal grounding is incomplete \u2014 and vice versa.",
+      "subheadline": "Governance without societal grounding is incomplete — and vice versa.",
       "left": {
         "title": "Governance Pillars",
         "bullets": [
-          "Human Agency & Oversight \u2014 humans must own final decisions",
-          "Technical Robustness & Safety \u2014 errors must not lead to harm",
-          "Privacy & Data Governance \u2014 strict rules on personal data use",
-          "Transparency \u2014 explain decisions, steps, and data sources"
+          "Human Agency & Oversight — humans must own final decisions",
+          "Technical Robustness & Safety — errors must not lead to harm",
+          "Privacy & Data Governance — strict rules on personal data use",
+          "Transparency — explain decisions, steps, and data sources"
         ]
       },
       "right": {
         "title": "Societal Pillars",
         "bullets": [
-          "Diversity, Non-Discrimination & Fairness \u2014 AI must work equally for everyone",
-          "Societal & Environmental Wellbeing \u2014 AI must deliver a positive net impact",
-          "Accountability \u2014 clear ownership when systems cause harm or fail"
+          "Diversity, Non-Discrimination & Fairness — AI must work equally for everyone",
+          "Societal & Environmental Wellbeing — AI must deliver a positive net impact",
+          "Accountability — clear ownership when systems cause harm or fail"
         ]
       }
     },
@@ -185,14 +161,14 @@
     {
       "type": "illustration",
       "headline": "Real-World Ethical Failures",
-      "subheadline": "These are not hypothetical \u2014 they are happening now.",
+      "subheadline": "These are not hypothetical — they are happening now.",
       "illus": "ethics-cases",
       "bullets": [
-        "Judicial AI \u2014 A judge used ChatGPT to advise on a child's medical rights and was ruled unethical by an oversight body",
-        "Hallucination in court \u2014 A lawyer submitted AI-generated fake case citations; they faced sanctions and public censure",
-        "Social Credit \u2014 China's 1,000-point AI-monitored system rewards and punishes 14 million+ citizens based on behaviour",
-        "Environmental cost \u2014 Data centres consumed 22% of Ireland's energy in 2024, growing with every additional AI prompt",
-        "Water usage \u2014 ChatGPT uses approximately 0.5 litres of water per 5\u201350 prompts for server cooling alone"
+        "Judicial AI — A judge used ChatGPT to advise on a child's medical rights and was ruled unethical by an oversight body",
+        "Hallucination in court — A lawyer submitted AI-generated fake case citations; they faced sanctions and public censure",
+        "Social Credit — China's 1,000-point AI-monitored system rewards and punishes 14 million+ citizens based on behaviour",
+        "Environmental cost — Data centres consumed 22% of Ireland's energy in 2024, growing with every additional AI prompt",
+        "Water usage — ChatGPT uses approximately 0.5 litres of water per 5–50 prompts for server cooling alone"
       ]
     },
     {
@@ -200,29 +176,17 @@
       "photoKey": "lawyers_chart",
       "label": "Labour Market Shift",
       "headline": "Bargaining Power: In-House Legal Grew 200%+ as Firms Cut External Spend",
-      "caption": "As AI tools enabled companies to bring legal work in-house, law firm growth stagnated. This pattern \u2014 technology shifting bargaining power from specialist suppliers to buyers \u2014 is now repeating across every knowledge profession. Source: Prof. Andy Wu, Harvard Business School"
+      "caption": "As AI tools enabled companies to bring legal work in-house, law firm growth stagnated. This pattern — technology shifting bargaining power from specialist suppliers to buyers — is now repeating across every knowledge profession. Source: Prof. Andy Wu, Harvard Business School"
     },
     {
       "type": "stats",
       "headline": "AI and the Future of Work",
-      "subheadline": "Automation now reaches white-collar professions \u2014 not just physical labour.",
+      "subheadline": "Automation now reaches white-collar professions — not just physical labour.",
       "stats": [
-        {
-          "num": "+200%",
-          "label": "Growth in US in-house legal roles (1997\u20132019) as firms cut external law firm spend"
-        },
-        {
-          "num": "~$0",
-          "label": "Marginal cost of an additional AI-generated legal document, code review, or brief"
-        },
-        {
-          "num": "36%",
-          "label": "YC Gen AI startups targeting engineering, product and design \u2014 all cognitive roles"
-        },
-        {
-          "num": "2",
-          "label": "Key questions: Where is our data? What must our organisation look like?"
-        }
+        { "num": "+200%", "label": "Growth in US in-house legal roles (1997–2019) as firms cut external law firm spend" },
+        { "num": "~$0",   "label": "Marginal cost of an additional AI-generated legal document, code review, or brief" },
+        { "num": "36%",   "label": "YC Gen AI startups targeting engineering, product and design — all cognitive roles" },
+        { "num": "2",     "label": "Key questions: Where is our data? What must our organisation look like?" }
       ]
     },
     {
@@ -230,21 +194,19 @@
       "fileId": "1lfjQLTFAahF_Lyma92YbTx4zPkqR-NoN",
       "label": "Provocation",
       "headline": "The Last Job on Earth",
-      "subheadline": "Imagining a fully automated world \u2014 2 min 52 sec",
+      "subheadline": "Imagining a fully automated world — 2 min 52 sec",
       "caption": "A short film exploring what a world without human labour might look like, and what it means for how we think about AI strategy today."
     },
     {
-      "subheadline": "Strategy and ethics are not in tension \u2014 both demand anticipation and the courage to act.",
+      "subheadline": "Strategy and ethics are not in tension — both demand anticipation and the courage to act.",
       "bullets": [
-        "Anticipate the curve: Generative AI will keep improving \u2014 leaders must plan for the trajectory, not the current state",
-        "Access is the revolution: AI changes who can use specialised computing \u2014 democratising and disrupting simultaneously",
+        "Anticipate the curve: Generative AI will keep improving — leaders must plan for the trajectory, not the current state",
+        "Access is the revolution: AI changes who can use specialised computing — democratising and disrupting simultaneously",
         "Cost beats quality: Even weak AI is worth adopting when structural cost savings outweigh quality trade-offs",
-        "Disrupt yourself first: Wide AI adoption intensifies competition \u2014 incumbents who wait become the Blockbuster",
-        "Ethics is not optional: Bias, privacy, and accountability require proactive governance \u2014 not reactive compliance",
+        "Disrupt yourself first: Wide AI adoption intensifies competition — incumbents who wait become the Blockbuster",
+        "Ethics is not optional: Bias, privacy, and accountability require proactive governance — not reactive compliance",
         "Two questions: Where is our data? What must our organisation look like to compete in five years?"
-      ],
-      "headline": "Key Takeaways",
-      "type": "content"
+      ]
     },
     {
       "type": "closing",
