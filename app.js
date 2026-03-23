@@ -97,117 +97,98 @@ const ILLUS = {
 
   'value-stick': `
 <svg class="slide-illustration" viewBox="0 0 560 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!--
-    Three horizontal bands (each 80px tall):
-      Band A: Worth to Customer  y=60
-      Band B: Price              y=160
-      Band C: Cost to Supplier   y=260
+  <text x="160" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="${C.ink2}">Status quo</text>
+  <text x="388" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="${C.cobalt}">With AI</text>
 
-    Status Quo axis: x=160  ticks at y=60, y=160, y=260
-    With AI  axis:  x=380  ticks shift: Worth UP → y=30, Cost DOWN → y=285
-  -->
+  <!-- Baselines -->
+  <line x1="160" y1="40" x2="160" y2="286" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="388" y1="40" x2="388" y2="286" stroke="${C.divider}" stroke-width="1.5"/>
 
-  <!-- ── Column headers ── -->
-  <text x="160" y="22" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="${C.ink2}">Status Quo</text>
-  <text x="380" y="22" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="${C.cobalt}">With AI</text>
+  <!-- Status quo ticks -->
+  <line x1="148" y1="72"  x2="172" y2="72"  stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="148" y1="162" x2="172" y2="162" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="148" y1="252" x2="172" y2="252" stroke="${C.divider}" stroke-width="1.5"/>
 
-  <!-- ── Row labels (right of each axis) ── -->
-  <text x="174" y="64"  font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Worth to Customer</text>
-  <text x="174" y="164" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Price</text>
-  <text x="174" y="264" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Cost to Supplier</text>
+  <!-- AI ticks -->
+  <line x1="376" y1="48"  x2="400" y2="48"  stroke="${C.cobalt}" stroke-width="2"/>
+  <line x1="376" y1="162" x2="400" y2="162" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="376" y1="276" x2="400" y2="276" stroke="${C.coral}" stroke-width="2"/>
 
-  <!-- ── Status Quo vertical axis ── -->
-  <line x1="160" y1="32" x2="160" y2="290" stroke="${C.divider}" stroke-width="1.5"/>
-  <!-- tick marks -->
-  <line x1="148" y1="60"  x2="172" y2="60"  stroke="${C.divider}" stroke-width="1.5"/>
-  <line x1="148" y1="160" x2="172" y2="160" stroke="${C.divider}" stroke-width="1.5"/>
-  <line x1="148" y1="260" x2="172" y2="260" stroke="${C.divider}" stroke-width="1.5"/>
+  <!-- Connectors -->
+  <line x1="388" y1="72"  x2="388" y2="49"  stroke="${C.cobalt}" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="388" y1="252" x2="388" y2="275" stroke="${C.coral}" stroke-width="1" stroke-dasharray="4,3"/>
 
-  <!-- ── Brace labels left of SQ axis ── -->
-  <!-- Margin brace: between y=60 and y=160 -->
-  <line x1="100" y1="60"  x2="100" y2="160" stroke="${C.divider}" stroke-width="1"/>
-  <line x1="100" y1="60"  x2="108" y2="60"  stroke="${C.divider}" stroke-width="1"/>
-  <line x1="100" y1="160" x2="108" y2="160" stroke="${C.divider}" stroke-width="1"/>
-  <text x="92" y="114" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.cobalt}" opacity="0.55">Margin</text>
-  <!-- Profit brace: between y=160 and y=260 -->
-  <line x1="100" y1="160" x2="100" y2="260" stroke="${C.divider}" stroke-width="1"/>
-  <line x1="100" y1="260" x2="108" y2="260" stroke="${C.divider}" stroke-width="1"/>
-  <text x="92" y="214" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}" opacity="0.5">Profit</text>
+  <!-- Row labels -->
+  <text x="186" y="76"  font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}">Worth to customer</text>
+  <text x="186" y="166" font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}">Price</text>
+  <text x="186" y="256" font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}">Cost to supplier</text>
 
-  <!-- ── With AI vertical axis ── -->
-  <line x1="380" y1="32" x2="380" y2="290" stroke="${C.divider}" stroke-width="1.5"/>
+  <!-- Margin / profit braces -->
+  <line x1="104" y1="72"  x2="104" y2="162" stroke="${C.divider}" stroke-width="1"/>
+  <line x1="104" y1="72"  x2="112" y2="72"  stroke="${C.divider}" stroke-width="1"/>
+  <line x1="104" y1="162" x2="112" y2="162" stroke="${C.divider}" stroke-width="1"/>
+  <text x="96" y="120" text-anchor="end" font-family="Inter,sans-serif" font-size="8.5" fill="${C.cobalt}" opacity="0.7">Margin</text>
 
-  <!-- Worth tick (moved UP to y=30 — higher than status quo y=60) -->
-  <line x1="368" y1="30" x2="392" y2="30" stroke="${C.cobalt}" stroke-width="2"/>
-  <!-- dashed connector showing the shift from y=60 down to new y=30 -->
-  <line x1="380" y1="60" x2="380" y2="31" stroke="${C.cobalt}" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- label above the new tick -->
-  <rect x="318" y="16" width="124" height="18" rx="4" fill="${C.cobalt}" opacity="0.09"/>
-  <text x="380" y="29" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.cobalt}">↑ Better quality</text>
+  <line x1="104" y1="162" x2="104" y2="252" stroke="${C.divider}" stroke-width="1"/>
+  <line x1="104" y1="252" x2="112" y2="252" stroke="${C.divider}" stroke-width="1"/>
+  <text x="96" y="210" text-anchor="end" font-family="Inter,sans-serif" font-size="8.5" fill="${C.ink2}" opacity="0.7">Profit</text>
 
-  <!-- Price tick (same y=160 — unchanged) -->
-  <line x1="368" y1="160" x2="392" y2="160" stroke="${C.divider}" stroke-width="1.5"/>
+  <!-- Improvement callouts -->
+  <rect x="322" y="30" width="132" height="20" rx="4" fill="${C.cobalt}" opacity="0.1"/>
+  <text x="388" y="43" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.cobalt}">↑ Better quality</text>
 
-  <!-- Cost tick (moved DOWN to y=285 — lower than status quo y=260) -->
-  <line x1="368" y1="285" x2="392" y2="285" stroke="${C.coral}" stroke-width="2"/>
-  <!-- dashed connector showing the shift from y=260 down to new y=285 -->
-  <line x1="380" y1="260" x2="380" y2="284" stroke="${C.coral}" stroke-width="1" stroke-dasharray="4,3"/>
-  <!-- label below the new tick -->
-  <rect x="318" y="289" width="124" height="18" rx="4" fill="${C.coral}" opacity="0.1"/>
-  <text x="380" y="302" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.coral}">↓ Lower cost</text>
+  <rect x="322" y="282" width="132" height="20" rx="4" fill="${C.coral}" opacity="0.1"/>
+  <text x="388" y="295" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.coral}">↓ Lower cost</text>
 
-  <!-- ── "More value created" callout ── -->
-  <!-- Brace on right side showing expanded gap -->
-  <line x1="460" y1="30"  x2="460" y2="285" stroke="${C.cobalt}" stroke-width="1.5" opacity="0.3"/>
-  <line x1="460" y1="30"  x2="452" y2="30"  stroke="${C.cobalt}" stroke-width="1.5" opacity="0.3"/>
-  <line x1="460" y1="285" x2="452" y2="285" stroke="${C.cobalt}" stroke-width="1.5" opacity="0.3"/>
-  <text x="470" y="150" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="${C.cobalt}">More value</text>
-  <text x="470" y="165" font-family="Inter,sans-serif" font-size="10" fill="${C.ink2}">created</text>
-
-  <!-- ── Arrow markers ── -->
-  <defs>
-    <marker id="upc"   markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,6 L3,0 L6,6 Z" fill="${C.cobalt}"/></marker>
-    <marker id="downc" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L3,6 L6,0 Z" fill="${C.coral}"/></marker>
-  </defs>
+  <!-- Value creation brace -->
+  <line x1="470" y1="48"  x2="470" y2="276" stroke="${C.cobalt}" stroke-width="1.5" opacity="0.35"/>
+  <line x1="470" y1="48"  x2="462" y2="48"  stroke="${C.cobalt}" stroke-width="1.5" opacity="0.35"/>
+  <line x1="470" y1="276" x2="462" y2="276" stroke="${C.cobalt}" stroke-width="1.5" opacity="0.35"/>
+  <text x="482" y="152" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="${C.cobalt}">More value</text>
+  <text x="482" y="166" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">created</text>
 </svg>`,
 
   'disruption': `
 <svg class="slide-illustration" viewBox="0 0 540 300" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Axes -->
-  <line x1="52" y1="252" x2="512" y2="252" stroke="${C.divider}" stroke-width="1.5"/>
-  <line x1="52" y1="20"  x2="52"  y2="252" stroke="${C.divider}" stroke-width="1.5"/>
-  <text x="282" y="272" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Time →</text>
-  <text x="26"  y="140" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}" transform="rotate(-90,26,140)">Market Share</text>
+  <line x1="60" y1="248" x2="506" y2="248" stroke="${C.divider}" stroke-width="1.5"/>
+  <line x1="60" y1="28"  x2="60"  y2="248" stroke="${C.divider}" stroke-width="1.5"/>
+  <text x="283" y="278" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}">Time →</text>
+  <text x="24"  y="138" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}" transform="rotate(-90,24,138)">Market share</text>
+
   <!-- Tick labels -->
-  <text x="44" y="256" text-anchor="end" font-family="Inter,sans-serif" font-size="7.5" fill="${C.ink2}">0</text>
-  <text x="44" y="200" text-anchor="end" font-family="Inter,sans-serif" font-size="7.5" fill="${C.ink2}">25%</text>
-  <text x="44" y="144" text-anchor="end" font-family="Inter,sans-serif" font-size="7.5" fill="${C.ink2}">50%</text>
-  <line x1="52" y1="200" x2="58" y2="200" stroke="${C.divider}"/>
-  <line x1="52" y1="144" x2="58" y2="144" stroke="${C.divider}"/>
+  <text x="50" y="252" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}">0</text>
+  <text x="50" y="194" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}">25%</text>
+  <text x="50" y="138" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}">50%</text>
+  <text x="50" y="82" text-anchor="end" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}">75%</text>
+  <line x1="60" y1="192" x2="66" y2="192" stroke="${C.divider}"/>
+  <line x1="60" y1="136" x2="66" y2="136" stroke="${C.divider}"/>
+  <line x1="60" y1="80" x2="66" y2="80" stroke="${C.divider}"/>
 
-  <!-- Incumbent stalls (muted) -->
-  <path d="M56,246 C80,242 128,224 172,182 C216,140 244,118 268,110 C292,102 316,102 460,102"
+  <!-- Incumbent stalls -->
+  <path d="M68,244 C112,236 152,212 194,174 C232,142 270,122 312,114 C352,107 398,106 454,106"
         stroke="${C.divider}" stroke-width="2.5" fill="none" stroke-dasharray="6,4"/>
-  <text x="466" y="106" font-family="Inter,sans-serif" font-size="8.5" fill="${C.ink2}">Incumbent</text>
-  <text x="420" y="122" font-family="Inter,sans-serif" font-size="7.5" fill="${C.ink2}" opacity="0.7">stalls</text>
+  <text x="458" y="96" font-family="Inter,sans-serif" font-size="9" fill="${C.ink2}">Incumbent</text>
+  <text x="458" y="110" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}" opacity="0.75">stalls</text>
 
-  <!-- Disruptor overtakes (cobalt) -->
-  <path d="M56,250 C74,249 106,247 150,242 C208,235 260,216 316,172 C372,128 414,88 476,52"
+  <!-- Disruptor overtakes -->
+  <path d="M68,246 C118,246 164,244 210,230 C264,214 314,184 364,136 C406,96 442,68 486,44"
         stroke="${C.cobalt}" stroke-width="3" fill="none"/>
-  <text x="478" y="56" font-family="Inter,sans-serif" font-size="8.5" font-weight="600" fill="${C.cobalt}">Disruptor</text>
+  <text x="446" y="42" font-family="Inter,sans-serif" font-size="9" font-weight="600" fill="${C.cobalt}">Disruptor accelerates</text>
 
-  <!-- Crossover -->
-  <circle cx="330" cy="167" r="6" fill="none" stroke="${C.coral}" stroke-width="2"/>
-  <line x1="330" y1="167" x2="330" y2="252" stroke="${C.coral}" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="330" y="265" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.coral}">Crossover</text>
+  <!-- Crossover marker -->
+  <circle cx="338" cy="160" r="6" fill="#fff" stroke="${C.coral}" stroke-width="2"/>
+  <line x1="338" y1="166" x2="338" y2="248" stroke="${C.coral}" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="338" y="265" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.coral}">Crossover point</text>
 
-  <!-- Blockbuster tag -->
-  <rect x="346" y="86" width="96" height="20" rx="3" fill="#F0F2F5"/>
-  <text x="394" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="${C.ink2}">Bankruptcy 2010 →</text>
-  <line x1="394" y1="106" x2="394" y2="120" stroke="${C.divider}" stroke-width="1"/>
+  <!-- Bankruptcy callout -->
+  <rect x="344" y="76" width="110" height="24" rx="4" fill="#F0F2F5" stroke="${C.divider}"/>
+  <text x="399" y="91" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.ink2}">Bankruptcy 2010</text>
+  <line x1="399" y1="100" x2="399" y2="114" stroke="${C.divider}" stroke-width="1"/>
 
-  <!-- Netflix note -->
-  <text x="200" y="268" font-family="Inter,sans-serif" font-size="7.5" fill="${C.cobalt}" opacity="0.7">Netflix = 1.5% of Blockbuster's size at crossover</text>
+  <!-- Scale note -->
+  <rect x="132" y="258" width="192" height="18" rx="4" fill="${C.cobalt}" opacity="0.08"/>
+  <text x="228" y="270" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.cobalt}">Netflix was ~1.5% of Blockbuster's size in 2003</text>
 </svg>`,
 
   'ethics-cases': `
@@ -271,7 +252,7 @@ const ILLUS = {
 
 function renderTitle(slide, idx, total) {
   return `
-  <div class="slide slide-title" data-slide="${idx}">
+  <div class="slide slide-title intro-conclusion-center" data-slide="${idx}">
     <div class="title-cobalt-rule"></div>
     <div class="slide-inner" style="max-width:840px;">
       <div class="title-eyebrow" data-animate data-delay="1">Stephen Rando PhD · 2026</div>
@@ -329,7 +310,7 @@ function renderCards(bullets) {
 
 function renderContent(slide, idx, total) {
   return `
-  <div class="slide" data-slide="${idx}">
+  <div class="slide illustration-${slide.illus || 'generic'}" data-slide="${idx}">
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Insight</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -439,7 +420,7 @@ function renderIllustration(slide, idx, total) {
   });
   const illus5 = parsed.length >= 5 ? ' illus-cards-2col' : '';
   return `
-  <div class="slide" data-slide="${idx}">
+  <div class="slide illustration-${slide.illus || 'generic'}" data-slide="${idx}">
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Analysis</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
@@ -464,7 +445,7 @@ function renderIllustration(slide, idx, total) {
 
 function renderClosing(slide, idx, total) {
   return `
-  <div class="slide slide-closing" data-slide="${idx}">
+  <div class="slide slide-closing intro-conclusion-center" data-slide="${idx}">
     <div class="slide-inner" style="max-width:720px;">
       <div class="slide-label" data-animate data-delay="1">Closing</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
