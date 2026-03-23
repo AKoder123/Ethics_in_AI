@@ -312,7 +312,11 @@ function renderCards(bullets) {
     if (col > 0 && col < 44) return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
     return { title: null, body: b };
   });
-  const gridClass = count <= 3 ? 'card-row-3' : count === 4 ? 'card-row-4' : 'card-row-3';
+  // 3 → 1×3, 4 → 2×2, 5 or 6 → 2-row grid with 3 cols
+  let gridClass;
+  if (count <= 3)       gridClass = 'card-row-3';
+  else if (count === 4) gridClass = 'card-row-2';
+  else                  gridClass = 'card-row-3 card-multirow';
   return `<div class="card-grid ${gridClass}" data-animate="fade-up" data-delay="4">
     ${parsed.map((p, i) => `
       <div class="insight-card">
@@ -433,15 +437,16 @@ function renderIllustration(slide, idx, total) {
     if (col > 0 && col < 44) return { title: b.slice(0, col).trim(), body: b.slice(col + 1).trim() };
     return { title: null, body: b };
   });
+  const illus5 = parsed.length >= 5 ? ' illus-cards-2col' : '';
   return `
   <div class="slide" data-slide="${idx}">
     <div class="slide-inner">
       <div class="slide-label" data-animate data-delay="1">Analysis</div>
       <h2 data-animate data-delay="2">${slide.headline}</h2>
       ${slide.subheadline ? `<p class="subheadline" data-animate data-delay="3" style="margin-bottom:0;">${slide.subheadline}</p>` : ''}
-      <div class="img-text-row">
+      <div class="img-text-row${illus5 ? ' illus-5-row' : ''}">
         <div class="img-panel" data-animate="fade-left" data-delay="4">${svg}</div>
-        <div class="illus-cards">
+        <div class="illus-cards${illus5}">
           ${parsed.map((p) => `
             <div class="illus-point">
               <div class="illus-point-accent"></div>

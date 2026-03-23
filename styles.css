@@ -174,8 +174,8 @@ h3 {
 
 /* Subheadline — body-scale, ~1.1rem = ~29px */
 .subheadline {
-  font-size: 1.05rem; font-weight: 400;
-  color: var(--ink2); margin-top: 5px; line-height: 1.5;
+  font-size: 1.0rem; font-weight: 400;
+  color: var(--ink2); margin-top: 4px; line-height: 1.45;
 }
 
 /* ─── TITLE SLIDE ─── */
@@ -221,11 +221,11 @@ h3 {
 .col-left  .col-title { color: var(--cobalt); }
 .col-right .col-title { color: var(--coral); }
 
-/* col bullets — was ~0.8rem, now 1.1rem */
+/* col bullets — readable but compact for 4-item columns */
 .col-bullet {
   display: flex; align-items: flex-start; gap: 8px;
-  font-size: 20px; color: var(--ink);
-  line-height: 1.45; margin-bottom: 7px; padding-bottom: 7px;
+  font-size: 17px; color: var(--ink);
+  line-height: 1.4; margin-bottom: 6px; padding-bottom: 6px;
   border-bottom: 1px solid var(--divider);
 }
 .col-bullet:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
@@ -299,9 +299,21 @@ h3 {
 .bar-val { font-size: 18px; font-weight: 600; color: var(--ink); width: 70px; flex-shrink: 0; }
 
 /* ─── INSIGHT CARDS ─── */
-.card-grid { display: grid; gap: 8px; margin-top: 10px; }
+.card-grid { display: grid; gap: 7px; margin-top: 10px; }
+
+/* 3 items: single row, 3 columns */
 .card-row-3 { grid-template-columns: repeat(3, 1fr); }
-.card-row-4 { grid-template-columns: repeat(2, 1fr); }
+
+/* 4 items: 2×2 */
+.card-row-2 { grid-template-columns: repeat(2, 1fr); }
+
+/* 5 or 6 items: 2 rows × 3 cols — text auto-scales down */
+.card-multirow { grid-template-columns: repeat(3, 1fr); }
+.card-multirow .insight-card { padding: 8px 12px; gap: 3px; }
+.card-multirow .insight-card-title { font-size: 16px; line-height: 1.2; }
+.card-multirow .insight-card-body  { font-size: 14px; line-height: 1.4; }
+.card-multirow .insight-card-num   { font-size: 11px; }
+
 .insight-card {
   background: var(--surface); border: 1px solid var(--divider); border-radius: var(--r);
   padding: 10px 14px; display: flex; flex-direction: column; gap: 4px;
@@ -323,18 +335,27 @@ h3 {
 .slide.is-active .insight-card:nth-child(6)::before{transition-delay:.78s}
 .insight-card:hover { border-color: var(--cobalt); box-shadow: 0 3px 14px rgba(59,91,219,0.09); }
 
-/* card num — was 0.6rem, now 0.88rem */
-.insight-card-num { font-size: 13px; font-weight: 600; color: var(--cobalt); letter-spacing: 0.08em; opacity: 0.65; }
+.insight-card-num   { font-size: 13px; font-weight: 600; color: var(--cobalt); letter-spacing: 0.08em; opacity: 0.65; }
 .insight-card:nth-child(3n+2) .insight-card-num { color: var(--coral); }
-
-/* card title — was ~0.88rem, now 1.15rem */
 .insight-card-title { font-size: 20px; font-weight: 600; color: var(--ink); line-height: 1.25; }
-
-/* card body — was ~0.8rem, now 1.05rem */
-.insight-card-body { font-size: 18px; color: var(--ink2); line-height: 1.45; font-weight: 400; }
+.insight-card-body  { font-size: 18px; color: var(--ink2); line-height: 1.45; font-weight: 400; }
 
 /* ─── ILLUSTRATION SIDE POINTS ─── */
 .illus-cards { display: flex; flex-direction: column; gap: 6px; }
+
+/* 5-point illus: switch to 2-column grid of points, smaller text */
+.illus-cards-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.illus-cards-2col .illus-point-title { font-size: 15px; }
+.illus-cards-2col .illus-point-body  { font-size: 13px; line-height: 1.4; }
+.illus-cards-2col .illus-point       { padding: 7px 10px; gap: 8px; }
+
+/* When 5 points, shrink the SVG panel slightly */
+.illus-5-row { grid-template-columns: 44% 1fr; }
+
 .illus-point {
   display: flex; gap: 12px; align-items: flex-start;
   background: var(--surface); border: 1px solid var(--divider); border-radius: var(--r);
@@ -344,12 +365,8 @@ h3 {
 .illus-point-accent { width: 3px; border-radius: 2px; background: var(--cobalt); flex-shrink: 0; align-self: stretch; min-height: 22px; }
 .illus-point:nth-child(even) .illus-point-accent { background: var(--coral); }
 .illus-point-content { flex: 1; }
-
-/* illus title — was ~0.82rem, now 1.1rem */
 .illus-point-title { font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
-
-/* illus body — was ~0.76rem, now 1rem */
-.illus-point-body { font-size: 18px; color: var(--ink2); line-height: 1.45; }
+.illus-point-body  { font-size: 18px; color: var(--ink2); line-height: 1.45; }
 
 /* ─── CLOSING ─── */
 .slide-closing { background: var(--slate); }
