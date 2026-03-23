@@ -153,7 +153,7 @@ const ILLUS = {
   <!-- Axes -->
   <line x1="60" y1="248" x2="506" y2="248" stroke="${C.divider}" stroke-width="1.5"/>
   <line x1="60" y1="28"  x2="60"  y2="248" stroke="${C.divider}" stroke-width="1.5"/>
-  <text x="283" y="288" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}">Time →</text>
+  <text x="283" y="294" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}">Time →</text>
   <text x="24"  y="138" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" fill="${C.ink2}" transform="rotate(-90,24,138)">Market share</text>
 
   <!-- Tick labels -->
@@ -179,7 +179,7 @@ const ILLUS = {
   <!-- Crossover marker -->
   <circle cx="338" cy="160" r="6" fill="#fff" stroke="${C.coral}" stroke-width="2"/>
   <line x1="338" y1="166" x2="338" y2="248" stroke="${C.coral}" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="350" y="258" font-family="Inter,sans-serif" font-size="8" fill="${C.coral}">Crossover point</text>
+  <text x="346" y="268" font-family="Inter,sans-serif" font-size="8" fill="${C.coral}">Crossover point</text>
 
   <!-- Bankruptcy callout -->
   <rect x="344" y="76" width="110" height="24" rx="4" fill="#F0F2F5" stroke="${C.divider}"/>
@@ -187,8 +187,8 @@ const ILLUS = {
   <line x1="399" y1="100" x2="399" y2="114" stroke="${C.divider}" stroke-width="1"/>
 
   <!-- Scale note -->
-  <rect x="104" y="262" width="248" height="18" rx="4" fill="${C.cobalt}" opacity="0.08"/>
-  <text x="228" y="274" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.cobalt}">Netflix was ~1.5% of Blockbuster's size in 2003</text>
+  <rect x="82" y="258" width="220" height="18" rx="4" fill="${C.cobalt}" opacity="0.08"/>
+  <text x="192" y="270" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="${C.cobalt}">Netflix was ~1.5% of Blockbuster in 2003</text>
 </svg>`,
 
   'ethics-cases': `
@@ -288,7 +288,7 @@ function renderTitle(slide, idx, total) {
 function renderSection(slide, idx, total) {
   const num = String(idx + 1).padStart(2, '0');
   return `
-  <div class="slide slide-section" data-slide="${idx}">
+  <div class="slide slide-section intro-conclusion-center" data-slide="${idx}">
     ${renderSlideChrome(slide, idx, total)}
     <div class="section-index" aria-hidden="true">${num}</div>
     <div class="slide-inner" style="max-width:720px; position:relative; z-index:2;">
