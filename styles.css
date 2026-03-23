@@ -550,3 +550,26 @@ body.exportingPdf .section-index        { opacity: 1 !important; transform: none
   .section-index { display: none; }
   #slideDots { display: none; }
 }
+
+
+/* restore centered title / section / closing slides */
+.slide-title .slide-inner,
+.slide-closing .slide-inner,
+.slide-section[data-slide="12"] .slide-inner {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.slide-title .subheadline,
+.slide-title .nav-hint,
+.slide-closing .closing-quote,
+.slide-closing .closing-presenter,
+.slide-section[data-slide="12"] .subheadline {
+  text-align: center;
+  justify-content: center;
+}
+.slide-title .slide-label::before,
+.slide-closing .slide-label::before,
+.slide-section[data-slide="12"] .slide-label::before {
+  display: none;
+}
