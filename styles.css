@@ -383,9 +383,15 @@ h3 { font-size: 20px; font-weight: 600; color: var(--cobalt); margin-bottom: 6px
 .illus-cards     .illus-point-body  { font-size: var(--t-card-bod); color: var(--ink2); line-height: 1.42; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 
 /* 5-point 2-col: same scale, fits because 2-col */
-.illus-cards-2col .illus-point-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.illus-cards-2col .illus-point-body  { font-size: 14px; color: var(--ink2); line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.illus-cards-2col .illus-point-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 3px; line-height: 1.2; white-space: normal; overflow: visible; text-overflow: clip; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.illus-cards-2col .illus-point-body  { font-size: 14px; color: var(--ink2); line-height: 1.36; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .illus-cards-2col .illus-point       { padding: 8px 10px; }
+
+/* Extra room for the disruption slide callout cards */
+.illustration-disruption .illus-cards-2col { grid-template-columns: 1fr 1.06fr; gap: 8px; }
+.illustration-disruption .illus-cards-2col .illus-point { min-height: 0; }
+.illustration-disruption .illus-cards-2col .illus-point-title { font-size: 14px; -webkit-line-clamp: 2; }
+.illustration-disruption .illus-cards-2col .illus-point-body { font-size: 13px; line-height: 1.34; -webkit-line-clamp: 4; }
 
 .illustration-value-stick .img-text-row { grid-template-columns: 54% 1fr; gap: 18px; }
 .illustration-disruption .img-text-row { grid-template-columns: 54% 1fr; gap: 18px; }
