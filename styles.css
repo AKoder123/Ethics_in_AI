@@ -617,3 +617,13 @@ body.exportingPdf .section-index        { opacity: 1 !important; transform: none
   .section-index { display: none; }
   #slideDots { display: none; }
 }
+
+.slide:nth-of-type(17) .card-title{
+  font-size: 17px;
+}
+
+.slide:nth-of-type(17) .card-body,
+.slide:nth-of-type(17) .card p,
+.slide:nth-of-type(17) .card li{
+  font-size: 14px;
+}
